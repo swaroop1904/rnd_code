@@ -1,0 +1,6 @@
+devel_space: /home/swaroop/ros/rnd_code/devel
+install: false
+install_space: /home/swaroop/ros/rnd_code/install
+profile: default
+source_space: /home/swaroop/ros/rnd_code/src
+workspace: /home/swaroop/ros/rnd_code
