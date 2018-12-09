@@ -1,5 +1,5 @@
-Package structure:
-
+<h2>Package structure:</h2>
+<h4>
 ├── CMakeLists.txt <br/>
 ├── package.xml <br/>
 ├── resources <br/>
@@ -9,3 +9,4 @@ Package structure:
 │   └── action_recognition_node.py <br/>
 └── src <br/>
     └── action_recognition.py <br/>
+</h4>
