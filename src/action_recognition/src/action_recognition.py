@@ -37,3 +37,9 @@ class ActionRecognition(object):
             self.count = 0
             self.frames = []
             return action_class
+
+if __name__ == '__main__':
+    rospy.init_node('action_recognition_node')
+    camera_topic = rospy.get_param('~camera_topic')
+    action_recognition = ActionRecognition(camera_topic)
+    rospy.spin()

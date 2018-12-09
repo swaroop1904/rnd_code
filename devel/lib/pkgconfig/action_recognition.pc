@@ -1,1 +1,0 @@
-/home/swaroop/ros/rnd_code/devel/.private/action_recognition/lib/pkgconfig/action_recognition.pc

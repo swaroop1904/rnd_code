@@ -161,7 +161,7 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 install(PROGRAMS
-  scripts/action_recognition_node
+  scripts/action_recognition
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -173,16 +173,14 @@ install(PROGRAMS
 # )
 
 ## Mark cpp header files for installation
-install(DIRECTORY launch/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}/ros/launch
-)
+#install(DIRECTORY launch/
+#  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+#)
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(DIRECTORY launch/
+ DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/ros/launch
+ )
 
 #############
 ## Testing ##
