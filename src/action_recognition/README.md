@@ -1,11 +1,11 @@
 Package structure:
 
-├── CMakeLists.txt \\
-├── package.xml \\
-├── resources \\
-│   ├── action_3dcnnmodel-gpu.hd5 \\
-│   └── action_3dcnnmodel.json \\
-├── scripts \\
-│   └── action_recognition_node.py \\
-└── src \\
-    └── action_recognition.py \\
+├── CMakeLists.txt <br/>
+├── package.xml <br/>
+├── resources <br/>
+│   ├── action_3dcnnmodel-gpu.hd5  <br/>
+│   └── action_3dcnnmodel.json <br/>
+├── scripts <br/>
+│   └── action_recognition_node.py <br/>
+└── src <br/>
+    └── action_recognition.py <br/>
