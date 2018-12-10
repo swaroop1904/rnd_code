@@ -21,7 +21,8 @@ class ActionRepresentationLearning(object):
             self.action_sequence = []
             self.current_demo_constraints = np.zeros([8,8])
             self.first_demo = False
-            np.save(constraints, self.constraints)
+            print self.constraints
+            #np.save('constraints', self.constraints)
         else:
             if self.first_demo:
                 for previous_actions in self.action_sequence:

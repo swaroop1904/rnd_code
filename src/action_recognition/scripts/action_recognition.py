@@ -11,14 +11,14 @@ import rospy
 import numpy as np
 class ActionRecognition(object):
 
-    def __init__(self, web_cam_topic, action_detected_topic):
+    def __init__(self, web_cam_topic, action_detected_topic, action_validation_topic, is_learning):
         self.bridge = CvBridge()
         self.frames = []
         self.count = 0
         self.height = 406
         self.width = 306
         self.depth = 10
-
+        self.learning = is_learning
         # retrieve the action recognition package path
         rospack = rospkg.RosPack()
         package_path = rospack.get_path('action_recognition')
@@ -34,8 +34,10 @@ class ActionRecognition(object):
 
         # define the subscriber and publisher
         rospy.Subscriber(web_cam_topic, Image, self.action_recognition_callback)
-        self.detected_action_pub = rospy.Publisher(action_detected_topic, Int16, queue_size=10)
-
+        if self.learning:
+            self.detected_action_pub = rospy.Publisher(action_detected_topic, Int16, queue_size=10)
+        else:
+            self.detected_action_pub = rospy.Publisher(action_validation_topic, Int16, queue_size=10)
     def action_recognition_callback(self, data):
         array_1 = np.array([0,1,2,3,4,5,6,7,-1])
         array_2 = np.array([2,1,0,3,5,6,4,7,-1])
@@ -64,5 +66,7 @@ if __name__ == '__main__':
     rospy.init_node('action_recognition_node')
     camera_topic = rospy.get_param('~camera_topic')
     action_detected_topic = rospy.get_param('~action_detected_topic')
-    action_recognition = ActionRecognition(camera_topic, action_detected_topic)
+    action_validation_topic = rospy.get_param('~action_validation_topic')
+    is_learning = rospy.get_param('~learning_topic')
+    action_recognition = ActionRecognition(camera_topic, action_detected_topic, action_validation_topic, is_learning)
     rospy.spin()

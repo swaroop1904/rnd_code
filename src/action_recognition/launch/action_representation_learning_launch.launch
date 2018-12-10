@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="action_detected_topic" default="action_detected" />
-    <node pkg="action_recognition" type="action_representation.py" name="action_representation_learning_node" output="screen">
+    <node pkg="action_recognition" type="action_representation_learning.py" name="action_representation_learning_node" output="screen">
         <param name="action_detected_topic" type="string" value="$(arg action_detected_topic)" />
     </node>
 </launch>
