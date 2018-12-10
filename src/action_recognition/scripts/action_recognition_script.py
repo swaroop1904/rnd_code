@@ -43,14 +43,19 @@ class ActionRecognition(object):
         array_2 = np.array([2,1,0,3,5,6,4,7,-1])
         array_3 = np.array([4,5,0,1,2,3,6,7,-1])
         array_4 = np.array([4,0,1,2,3,6,5,7,-1])
-        for val in array_1:
-            self.detected_action_pub.publish(val)
-        for val in array_2:
-            self.detected_action_pub.publish(val)
-        for val in array_3:
-            self.detected_action_pub.publish(val)
-        for val in array_4:
-            self.detected_action_pub.publish(val)
+        array_5 = np.array([3,0,1,2,4,6,5,7,-1])
+        if is_learning:
+            for val in array_1:
+                self.detected_action_pub.publish(val)
+            for val in array_2:
+                self.detected_action_pub.publish(val)
+            for val in array_3:
+                self.detected_action_pub.publish(val)
+            for val in array_4:
+                self.detected_action_pub.publish(val)
+        else:
+            for val in array_5:
+                self.detected_action_pub.publish(val)
         # data = self.bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
         # data = cv2.resize(data, (self.height, self.width))
         # self.frames.append(data)

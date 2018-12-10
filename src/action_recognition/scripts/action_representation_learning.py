@@ -4,6 +4,7 @@ import rospy
 
 from std_msgs.msg import Int16
 import numpy as np
+from action_recognition.msg import Matrix
 
 class ActionRepresentationLearning(object):
 
@@ -14,6 +15,9 @@ class ActionRepresentationLearning(object):
         self.first_demo = True
         self.current_demo_constraints = np.zeros([8,8])
 
+        self.constraint_publisher = rospy.Publisher("constraint_topic", Matrix, queue_size=10)
+
+
     def action_recognized_cb(self, action):
         # -1 is sent only when the demonstration is complete.
         if action.data == -1:
@@ -22,7 +26,9 @@ class ActionRepresentationLearning(object):
             self.current_demo_constraints = np.zeros([8,8])
             self.first_demo = False
             print self.constraints
-            #np.save('constraints', self.constraints)
+            one_dimension_constraints = np.squeeze(self.constraints.reshape([1,64]))
+            self.constraint_publisher.publish(one_dimension_constraints)
+
         else:
             if self.first_demo:
                 for previous_actions in self.action_sequence:
