@@ -15,11 +15,13 @@ class ActionRepresentationValidation(object):
         rospy.Subscriber("constraint_topic", Matrix, self.constraints_cb)
 
     def constraints_cb(self, constraints):
+        # print "entered_constraints"
         one_dimension_constraints = np.array(constraints.data)
         self.constraints = one_dimension_constraints.reshape([8,8])
-        print self.constraints
+        #print self.constraints
 
     def action_validation_cb(self, action):
+        # print action
         if action.data == -1:
             self.check_constraints()
             self.action_sequence = []
@@ -29,13 +31,14 @@ class ActionRepresentationValidation(object):
             self.action_sequence.append(action.data)
 
     def check_constraints(self):
-        print "*************************"
+        #print "*************************"
         print self.constraints
-        print self.current_constraints
+        #print self.current_constraints
         conflicting_constraints = self.constraints - self.current_constraints
+        #print conflicting_constraints
         conflicting_constraints_index = np.where(conflicting_constraints == 1)
 
-        print conflicting_constraints_index
+        # print conflicting_constraints_index
         for diff_index in zip(conflicting_constraints_index[0], conflicting_constraints_index[1]):
             print "{1} has to be performed before {0}".format(diff_index[0], diff_index[1])
 

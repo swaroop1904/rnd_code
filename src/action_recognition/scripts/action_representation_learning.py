@@ -25,7 +25,7 @@ class ActionRepresentationLearning(object):
             self.action_sequence = []
             self.current_demo_constraints = np.zeros([8,8])
             self.first_demo = False
-            print self.constraints
+            #print self.constraints
             one_dimension_constraints = np.squeeze(self.constraints.reshape([1,64]))
             self.constraint_publisher.publish(one_dimension_constraints)
 
@@ -39,11 +39,15 @@ class ActionRepresentationLearning(object):
             self.action_sequence.append(action.data)
 
     def update_constraints(self):
+        # print "**************************************************"
         if not self.first_demo:
             conflicting_constraints = self.constraints - self.current_demo_constraints
+            # print self.constraints
+            # print self.current_demo_constraints
             conflicting_constraints_index = np.where(np.abs(conflicting_constraints) == 1)
             for diff_index in zip(conflicting_constraints_index[0], conflicting_constraints_index[1]):
                 self.constraints[diff_index] = 0
+            # print self.constraints
 
 if __name__ == '__main__':
     rospy.init_node('action_representation_learning_node')
