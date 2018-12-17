@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="video_path" default="/home/swaroop/Documents/2nd Sem/RnD_papers/code/dataset/videos/train/s08-d02-cam-002.avi" />
+    <arg name="height" default="406" />
+    <arg name="width" default="306" />
+    <arg name="image_topic" default="image_topic"/>
+    <node pkg="action_recognition" type="video_publisher.py" name="video_publisher_node" output="screen">
+        <param name="video_path" type="string" value="$(arg video_path)" />
+        <param name="height" type="int" value="$(arg height)" />
+        <param name="width" type="int" value="$(arg width)" />
+        <param name="image_topic" type="string" value="$(arg image_topic)" />
+    </node>
+</launch>
