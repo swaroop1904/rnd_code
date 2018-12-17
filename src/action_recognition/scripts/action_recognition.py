@@ -17,13 +17,16 @@ import threading
 class ActionRecognition(object):
 
     def __init__(self, web_cam_topic, action_detected_topic, action_validation_topic, is_learning):
+        # define cv bridge to perform conversion from ros image to cv2 image
         self.bridge = CvBridge()
-        self.frames = []
+
+        # define the size of the video (height, width, depth)
         self.count = 0
         self.height = 406
         self.width = 306
         self.depth = 10
-        self.learning = is_learning
+        self.frames = np.zeros((self.width, self.height, self.depth, 3))
+
         # retrieve the action recognition package path
         rospack = rospkg.RosPack()
         package_path = rospack.get_path('action_recognition')
@@ -37,17 +40,28 @@ class ActionRecognition(object):
         self.model._make_predict_function()
         print("Loaded model from disk")
         self.graph = tf.get_default_graph()
+
         # define the subscriber and publisher
         rospy.Subscriber(web_cam_topic, Image, self.action_recognition_callback)
 
-        self.frames = np.zeros((self.width, self.height, self.depth, 3))
+        # used for multithreading purpose
         self.recognizing_action = False
         self.recognition_thread = None
+
+        # depending on whether it is performing learning or validation, publish
+        # the detected action to relevant topic
+        self.learning = is_learning
 
         if self.learning:
             self.detected_action_pub = rospy.Publisher(action_detected_topic, Int16, queue_size=10)
         else:
             self.detected_action_pub = rospy.Publisher(action_validation_topic, Int16, queue_size=10)
+
+        # read the csv files to get the action labels for validation the action representation model
+        # with the MP-II dataset
+        self.csv_path = package_path+"/resources/detectionGroundtruth-1-0_excel.xlsx"
+        get_ground_truth_data()
+
 
     def action_recognition_callback(self, data):
         # if self.learning:
@@ -94,6 +108,19 @@ class ActionRecognition(object):
         self.recognizing_action = False
         self.recognition_thread = None
 
+
+    def get_ground_truth_data(self):
+        ground_truth_data = dict()
+        with open(self.csv_path) as f_obj:
+            reader = csv.reader(f_obj)
+            for row in reader:
+                task = task_data(int(row[2]), int(row[3]), int(row[4])-1)
+                frame_array = ground_truth_data.get(row[1], None)
+                if frame_array == None:
+                    frame_array = []
+                frame_array.append(task)
+                ground_truth_data[row[1]] = frame_array
+        self.ground_truth_data = ground_truth_data
 
 if __name__ == '__main__':
     rospy.init_node('action_recognition_node')
