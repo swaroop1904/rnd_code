@@ -31,7 +31,7 @@ class ActionRepresentationValidation(object):
             self.action_sequence.append(action.data)
 
     def check_constraints(self):
-        #print "*************************"
+        print "*************************"
         print self.constraints
         #print self.current_constraints
         conflicting_constraints = self.constraints - self.current_constraints

@@ -25,7 +25,7 @@ class ActionRepresentationLearning(object):
             self.action_sequence = []
             self.current_demo_constraints = np.zeros([8,8])
             self.first_demo = False
-            #print self.constraints
+            print self.constraints
             one_dimension_constraints = np.squeeze(self.constraints.reshape([1,64]))
             self.constraint_publisher.publish(one_dimension_constraints)
 
