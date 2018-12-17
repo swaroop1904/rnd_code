@@ -7,3 +7,4 @@ publisher.txt
 *.ipynb
 *.ipynb_checkpoints
 src/action_recognition/resources/images/
+*.pyc
