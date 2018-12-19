@@ -26,25 +26,16 @@ class ActionRepresentationLearning(object):
 
         rospack = rospkg.RosPack()
         package_path = rospack.get_path('action_recognition')
-        self.action_no_label_mapping_file = package_path+"/resources/action_label_file.csv"
+        self.action_no_label_mapping_file = package_path+"/resources/coffee_action_label_file.csv"
         self.build_action_dictionary()
 
     def build_action_dictionary(self):
         self.action_no_label_mapping = {}
-        self.action_no_label_mapping['0'] = "turn on"
-        self.action_no_label_mapping['1'] = "keep vessel"
-        self.action_no_label_mapping['2'] = "pour water"
-        self.action_no_label_mapping['3'] = "boil"
-        self.action_no_label_mapping['4'] = "put sugar"
-        self.action_no_label_mapping['5'] = "put coffee"
-        self.action_no_label_mapping['6'] = "pour hot water"
-        self.action_no_label_mapping['7'] = "stir"
-        self.action_no_label_mapping['8'] = "random action"
 
-        # with open(self.action_no_label_mapping_file) as f_obj:
-        #     reader = csv.reader(f_obj)
-        #     for row in reader:
-        #         self.action_no_label_mapping[row[0]] = row[1]
+        with open(self.action_no_label_mapping_file) as f_obj:
+            reader = csv.reader(f_obj)
+            for row in reader:
+                self.action_no_label_mapping[row[0]] = row[1]
 
     def action_recognized_cb(self, action):
         if action.data == -1:
@@ -124,7 +115,7 @@ class ActionRepresentationLearning(object):
 
     def constraint_learned_details(self):
         print "###############################################"
-        print "\n constraints learned from this demo are: \n"
+        print "\n constraints present after from this demo are: \n"
         print "###############################################"
         for row_idx, row in enumerate(self.constraints):
             action_number_2 = self.action_map[str(row_idx)]
