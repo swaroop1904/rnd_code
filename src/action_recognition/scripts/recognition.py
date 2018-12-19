@@ -76,8 +76,8 @@ class ActionRecognition(object):
 
         # read the csv files to get the action labels for validation the action representation model
         # with the MP-II dataset
-        # self.csv_path = package_path+"/resources/detectionGroundtruth-1-0_excel.xlsx"
-        # self.get_ground_truth_data()
+        self.csv_path = package_path+"/resources/detectionGroundtruth-1-0.csv"
+        self.get_ground_truth_data()
 
 
     def get_ground_truth_data(self):
@@ -97,14 +97,20 @@ class ActionRecognition(object):
         ## hardcoded data
 
         if self.learning:
-            array_1 = np.array([0,1,2,3,-1])
-            array_2 = np.array([2,1,0,1,-1])
+            array_1 = np.array([0,1,2,3,4,5,6,7,-1])
+            array_2 = np.array([2,1,0,3,6,4,5,7,-1])
+            array_3 = np.array([5,4,0,1,2,3,6,7,-1])
+            #array_2 = np.array([2,1,0,1,-1])
             # array_3 = np.array([4,5,0,1,2,1,6,1,-1])
             # array_4 = np.array([4,0,1,2,3,1,6,5,-1])
             for val in array_1:
                 self.detected_action_pub.publish(val)
             for val in array_2:
                 self.detected_action_pub.publish(val)
+            for val in array_3:
+                self.detected_action_pub.publish(val)
+            # for val in array_2:
+            #     self.detected_action_pub.publish(val)
             # for val in array_3:
             #     self.detected_action_pub.publish(val)
             # for val in array_4:

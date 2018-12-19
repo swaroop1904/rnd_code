@@ -5,6 +5,9 @@ import rospy
 from std_msgs.msg import Int16
 import numpy as np
 from action_recognition.msg import Matrix
+import csv
+import rospkg
+
 
 class ActionRepresentationLearning(object):
 
@@ -13,9 +16,7 @@ class ActionRepresentationLearning(object):
         self.action_sequence = []
         self.first_demo = True
 
-        #self.constraints = np.zeros([8,8])
         self.constraints = np.zeros([1,1])
-        #self.current_demo_constraints = np.zeros([8,8])
         self.current_demo_constraints = np.zeros([1,1])
         self.action_map = {}
         self.current_demo_action_map = {}
@@ -23,6 +24,27 @@ class ActionRepresentationLearning(object):
 
         self.constraint_publisher = rospy.Publisher("constraint_topic", Matrix, queue_size=10)
 
+        rospack = rospkg.RosPack()
+        package_path = rospack.get_path('action_recognition')
+        self.action_no_label_mapping_file = package_path+"/resources/action_label_file.csv"
+        self.build_action_dictionary()
+
+    def build_action_dictionary(self):
+        self.action_no_label_mapping = {}
+        self.action_no_label_mapping['0'] = "turn on"
+        self.action_no_label_mapping['1'] = "keep vessel"
+        self.action_no_label_mapping['2'] = "pour water"
+        self.action_no_label_mapping['3'] = "boil"
+        self.action_no_label_mapping['4'] = "put sugar"
+        self.action_no_label_mapping['5'] = "put coffee"
+        self.action_no_label_mapping['6'] = "pour hot water"
+        self.action_no_label_mapping['7'] = "stir"
+        self.action_no_label_mapping['8'] = "random action"
+
+        # with open(self.action_no_label_mapping_file) as f_obj:
+        #     reader = csv.reader(f_obj)
+        #     for row in reader:
+        #         self.action_no_label_mapping[row[0]] = row[1]
 
     def action_recognized_cb(self, action):
         if action.data == -1:
@@ -31,12 +53,11 @@ class ActionRepresentationLearning(object):
             else:
                 self.current_demo_constraints = self.build_constraint_matrix()
                 self.update_constraints()
-
+            self.constraint_learned_details()
             self.first_demo = False
             self.action_sequence = []
             self.current_demo_action_map = {}
             self.current_demo_action_count = {}
-            print self.constraints
             self.constraint_publisher.publish(self.constraints.flatten())
         else:
             action_name = str(action.data)
@@ -44,19 +65,19 @@ class ActionRepresentationLearning(object):
                 if action.data in self.current_demo_action_count:
                     action_count = self.current_demo_action_count[action.data]
                     action_name = '{0}_{1}'.format(action.data, action_count)
-                    self.action_map[len(self.action_sequence)] = action.data
+                    self.action_map[str(len(self.action_sequence))] = action_name
                     self.current_demo_action_count[action.data] += 1
                 else:
-                    self.action_map[len(self.action_sequence)] = action_name
+                    self.action_map[str(len(self.action_sequence))] = action_name
                     self.current_demo_action_count[action.data] = 1
             else:
                 if action.data in self.current_demo_action_count:
                     action_count = self.current_demo_action_count[action.data]
                     action_name = '{0}_{1}'.format(action.data, action_count)
-                    self.current_demo_action_map[len(self.action_sequence)] = action_name
+                    self.current_demo_action_map[str(len(self.action_sequence))] = action_name
                     self.current_demo_action_count[action.data] += 1
                 else:
-                    self.current_demo_action_map[len(self.action_sequence)] = action_name
+                    self.current_demo_action_map[str(len(self.action_sequence))] = action_name
                     self.current_demo_action_count[action.data] = 1
             self.action_sequence.append(action_name)
 
@@ -66,35 +87,12 @@ class ActionRepresentationLearning(object):
             constraint_matrix[i,:i] = 1
         return constraint_matrix
 
-        # -1 is sent only when the demonstration is complete.
-        # if action.data == -1:
-        #     self.update_constraints()
-        #     self.action_sequence = []
-        #     self.current_demo_constraints = np.zeros([8,8])
-        #     self.first_demo = False
-        #     print self.constraints
-        #     one_dimension_constraints = np.squeeze(self.constraints.reshape([1,64]))
-        #     self.constraint_publisher.publish(one_dimension_constraints)
-        #
-        # else:
-        #     if self.first_demo:
-        #         constraint_new = np.zeros([self.constraints.shape + 1])
-        #         for previous_actions in self.action_sequence:
-        #             constraints_new[action.data, previous_actions] = 1
-        #         self.action_map[len(self.action_sequence)] = action.data
-        #     else:
-        #         for previous_actions in self.action_sequence:
-        #             self.current_demo_constraints[action.data, previous_actions] = 1
-        #     self.action_sequence.append(action.data)
-
     def update_constraints(self):
-        # print "**************************************************"
         new_action_list = [action for action in self.action_sequence
                            if action not in self.action_map.values()]
-
         prev_action_count = len(self.action_map.values())
         for action in new_action_list:
-            self.action_map[prev_action_count] = action
+            self.action_map[str(prev_action_count)] = action
             prev_action_count += 1
 
         new_action_count = len(self.action_map.values())
@@ -104,9 +102,9 @@ class ActionRepresentationLearning(object):
             self.constraints = new_constraint_matrix
 
         for i in range(self.current_demo_constraints.shape[0]):
-            action1 = self.current_demo_action_map[i]
+            action1 = self.current_demo_action_map[str(i)]
             for j in range(self.current_demo_constraints.shape[1]):
-                action2 = self.current_demo_action_map[j]
+                action2 = self.current_demo_action_map[str(j)]
 
                 action1_idx = self.get_action_idx(action1)
                 action2_idx = self.get_action_idx(action2)
@@ -118,18 +116,29 @@ class ActionRepresentationLearning(object):
                     else:
                         self.constraints[self.action_map[action1], self.action_map[action2]] = 0
 
-        # conflicting_constraints = self.constraints - self.current_demo_constraints
-        # # print self.constraints
-        # # print self.current_demo_constraints
-        # conflicting_constraints_index = np.where(np.abs(conflicting_constraints) == 1)
-        # for diff_index in zip(conflicting_constraints_index[0], conflicting_constraints_index[1]):
-        #     self.constraints[diff_index] = 0
-        # # print self.constraints
-
     def get_action_idx(self, action_name):
-        for action_idx, action in self.current_demo_action_map.items():
+        for action_idx, action in self.action_map.items():
             if action == action_name:
                 return action_idx
+
+
+    def constraint_learned_details(self):
+        print "###############################################"
+        print "\n constraints learned from this demo are: \n"
+        print "###############################################"
+        for row_idx, row in enumerate(self.constraints):
+            action_number_2 = self.action_map[str(row_idx)]
+            action_name_2 = self.action_no_label_mapping[action_number_2]
+            print "***********************************************"
+            print "preconditions for {0}:".format(action_name_2)
+            for col_idx, col in enumerate(row):
+                if col == 0:
+                    continue
+                else:
+                    action_number_1 = self.action_map[str(col_idx)]
+                    action_name_1 = self.action_no_label_mapping[action_number_1]
+                    print "{0} has to be performed before {1}".format(action_name_1, action_name_2)
+
 
 if __name__ == '__main__':
     rospy.init_node('action_representation_learning_node')
