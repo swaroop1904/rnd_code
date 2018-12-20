@@ -99,14 +99,14 @@ class ActionRecognition(object):
 
         # if self.learning:
         #     array_1 = np.array([0,1,2,3,4,5,6,7,-1])
-        #     array_2 = np.array([6,5,4,7,-1])
+        #     array_2 = np.array([2,1,0,3,6,4,5,7,-1])
         #     array_3 = np.array([5,4,2,1,0,3,6,7,-1])
         #     for val in array_1:
         #         self.detected_action_pub.publish(val)
         #     for val in array_2:
         #         self.detected_action_pub.publish(val)
-            # for val in array_3:
-            #    self.detected_action_pub.publish(val)
+        #     for val in array_3:
+        #        self.detected_action_pub.publish(val)
             # for val in array_2:
             #     self.detected_action_pub.publish(val)
             # for val in array_3:
@@ -138,7 +138,53 @@ class ActionRecognition(object):
         #     self.count = 0
 
         # data from MP-II dataset
-        self.publish_action_labels('s08-d02-cam-002')
+        file_names = ['s10-d11-cam-002',
+                     's08-d02-cam-002',
+                     's19-d01-cam-002',
+                     's08-d04-cam-002',
+                     's19-d07-cam-002',
+                     's11-d06-cam-002',
+                     's13-d12-cam-002',
+                     's19-d06-cam-002',
+                     's20-d07-cam-002',
+                     's11-d01-cam-002',
+                     's14-d11-cam-002',
+                     's14-d08-cam-002',
+                     's10-d10-cam-002',
+                     's11-d14-cam-002',
+                     's15-d07-cam-002',
+                     's11-d11-cam-002',
+                     's14-d09-cam-002',
+                     's13-d09-cam-002',
+                     's12-d07-cam-002',
+                     's13-d13-cam-002',
+                     's12-d14-cam-002',
+                     's17-d13-cam-002',
+                     's10-d02-cam-002',
+                     's08-d11-cam-002',
+                     's16-d09-cam-002',
+                     's17-d05-cam-002',
+                     's19-d09-cam-002',
+                     's15-d14-cam-002',
+                     's13-d11-cam-002',
+                     's16-d11-cam-002',
+                     's13-d08-cam-002',
+                     's11-d12-cam-002',
+                     's12-d09-cam-002',
+                     's18-d11-cam-002',
+                     's16-d06-cam-002',
+                     's19-d12-cam-002',
+                     's19-d10-cam-002',
+                     's11-d13-cam-002',
+                     's16-d01-cam-002',
+                     's15-d03-cam-002',
+                     's12-d10-cam-002',
+                     's08-d14-cam-002',
+                     's12-d05-cam-002',
+                     's17-d02-cam-002']
+
+        for video in file_names:
+            self.publish_action_labels(video)
 
 
     def action_recognition(self, frames):
@@ -161,9 +207,10 @@ class ActionRecognition(object):
                 count = count-1
                 continue
             previous_action = task.task_number
-            self.detected_action_pub.publish(task.task_number)
-        print count
-        self.detected_action_pub.publish(-1)
+            #self.detected_action_pub.publish(task.task_number)
+        if count < 40:
+            print video_name, count
+        #self.detected_action_pub.publish(-1)
 
 if __name__ == '__main__':
     rospy.init_node('action_recognition_node')

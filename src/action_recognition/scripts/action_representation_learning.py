@@ -39,15 +39,13 @@ class ActionRepresentationLearning(object):
 
     def action_recognized_cb(self, action):
         if action.data == -1:
-            print len(self.action_map)
-            print len(self.action_sequence)
             if self.first_demo:
                 self.constraints = self.build_constraint_matrix()
             else:
                 self.current_demo_constraints = self.build_constraint_matrix()
                 self.update_constraints()
-            #self.constraint_learned_details()
-            #self.draw_constraint_plot()
+            self.constraint_learned_details()
+            self.draw_constraint_plot()
             self.first_demo = False
             self.action_sequence = []
             self.current_demo_action_map = {}
@@ -94,20 +92,44 @@ class ActionRepresentationLearning(object):
             new_constraint_matrix[0:self.constraints.shape[0], 0:self.constraints.shape[1]] = self.constraints
             self.constraints = new_constraint_matrix
 
+        previous_action_list = [action for action in self.action_map.values()
+                                if action not in self.action_sequence]
+
+        desired_size = self.current_demo_constraints.shape[0] + len(previous_action_list)
+        new_current_constraint_matrix = np.zeros((desired_size, desired_size))
+
         for i in range(self.current_demo_constraints.shape[0]):
             action1 = self.current_demo_action_map[str(i)]
+            print "*****************"
+            print action1
             for j in range(self.current_demo_constraints.shape[1]):
                 action2 = self.current_demo_action_map[str(j)]
-
                 action1_idx = self.get_action_idx(action1)
                 action2_idx = self.get_action_idx(action2)
-                prev_constraint = self.constraints[action1_idx, action2_idx]
-                diff = abs(prev_constraint - self.current_demo_constraints[i,j])
-                if diff > 0:
-                    if action1 in new_action_list:
-                        self.constraints[self.action_map[action1], self.action_map[action2]] = 1
-                    else:
-                        self.constraints[self.action_map[action1], self.action_map[action2]] = 0
+                new_current_constraint_matrix[int(action1_idx)][int(action2_idx)] = self.current_demo_constraints[i][j]
+        self.current_demo_constraints = new_current_constraint_matrix
+
+        conflicting_constraints = self.constraints - self.current_demo_constraints
+        conflicting_constraints_index = np.where(np.abs(conflicting_constraints) == 1)
+        for diff_index in zip(conflicting_constraints_index[0], conflicting_constraints_index[1]):
+            action1 = self.action_map[str(diff_index[0])]
+            if action1 not in previous_action_list:
+                self.constraints[diff_index] = 0
+
+        # for i in range(self.current_demo_constraints.shape[0]):
+        #     action1 = self.current_demo_action_map[str(i)]
+        #     for j in range(self.current_demo_constraints.shape[1]):
+        #         action2 = self.current_demo_action_map[str(j)]
+        #
+        #         action1_idx = self.get_action_idx(action1)
+        #         action2_idx = self.get_action_idx(action2)
+        #         prev_constraint = self.constraints[action1_idx, action2_idx]
+        #         diff = abs(prev_constraint - self.current_demo_constraints[i,j])
+        #         if diff > 0:
+        #             if action1 in new_action_list:
+        #                 self.constraints[self.action_map[action1], self.action_map[action2]] = 1
+        #             else:
+        #                 self.constraints[self.action_map[action1], self.action_map[action2]] = 0
 
     def get_action_idx(self, action_name):
         for action_idx, action in self.action_map.items():
@@ -120,15 +142,15 @@ class ActionRepresentationLearning(object):
         print "\n constraints present after from this demo are: \n"
         print "###############################################"
         for row_idx, row in enumerate(self.constraints):
-            action_number_2 = self.action_map[str(row_idx)]
-            action_name_2 = self.action_no_label_mapping[action_number_2].split('_')[0]
+            action_number_2 = self.action_map[str(row_idx)].split('_')[0]
+            action_name_2 = self.action_no_label_mapping[action_number_2]
             print "***********************************************"
             print "Constraints present for {0}:".format(action_name_2)
             for col_idx, col in enumerate(row):
                 if col == 0:
                     continue
                 else:
-                    action_number_1 = self.action_map[str(col_idx)]
+                    action_number_1 = self.action_map[str(col_idx)].split('_')[0]
                     action_name_1 = self.action_no_label_mapping[action_number_1]
                     print "{0} has to be performed before {1}".format(action_name_1, action_name_2)
 
@@ -136,7 +158,8 @@ class ActionRepresentationLearning(object):
     def draw_constraint_plot(self):
         cmap = ListedColormap(['#00FF8C','#E0E0E0'])
 
-        action_name_list = [self.action_no_label_mapping[self.action_map[str(row_id)]] for row_id in xrange(len(self.action_map))]
+        action_name_list = [self.action_no_label_mapping[self.action_map[str(row_id)].split('_')[0]]
+                            for row_id in xrange(len(self.action_map))]
 
         fig = plt.figure()
         fig.set_figheight(5)
@@ -145,7 +168,7 @@ class ActionRepresentationLearning(object):
         ax.set_yticks(xrange(len(self.action_map)))
         ax.set_xticks(xrange(len(self.action_map)))
         ax.set_yticklabels(action_name_list, va='bottom', minor=False)
-        ax.set_xticklabels(action_name_list, ha='left', minor=False)
+        ax.set_xticklabels(action_name_list, rotation='vertical', ha='left', minor=False)
 
         im = ax.pcolor(self.constraints,cmap=cmap,norm=NoNorm())
 
