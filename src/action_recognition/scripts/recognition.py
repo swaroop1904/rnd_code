@@ -16,6 +16,7 @@ import threading
 
 from heapq import heappop
 import csv
+import copy
 
 class task_data:
     def __init__(self, start_frame, end_frame, task_number):
@@ -96,29 +97,26 @@ class ActionRecognition(object):
     def action_recognition_callback(self, data):
         ## hardcoded data
 
-        if self.learning:
-            array_1 = np.array([0,1,2,3,4,5,6,7,-1])
-            array_2 = np.array([2,1,0,3,6,4,5,7,-1])
-            array_3 = np.array([5,4,0,1,2,3,6,7,-1])
-            #array_2 = np.array([2,1,0,1,-1])
-            # array_3 = np.array([4,5,0,1,2,1,6,1,-1])
-            # array_4 = np.array([4,0,1,2,3,1,6,5,-1])
-            for val in array_1:
-                self.detected_action_pub.publish(val)
-            for val in array_2:
-                self.detected_action_pub.publish(val)
-            for val in array_3:
-                self.detected_action_pub.publish(val)
+        # if self.learning:
+        #     array_1 = np.array([0,1,2,3,4,5,6,7,-1])
+        #     array_2 = np.array([6,5,4,7,-1])
+        #     array_3 = np.array([5,4,2,1,0,3,6,7,-1])
+        #     for val in array_1:
+        #         self.detected_action_pub.publish(val)
+        #     for val in array_2:
+        #         self.detected_action_pub.publish(val)
+            # for val in array_3:
+            #    self.detected_action_pub.publish(val)
             # for val in array_2:
             #     self.detected_action_pub.publish(val)
             # for val in array_3:
             #     self.detected_action_pub.publish(val)
             # for val in array_4:
             #     self.detected_action_pub.publish(val)
-        else:
-            array_5 = np.array([7,3,1,2,0,4,5,6,-1])
-            for val in array_5:
-                self.detected_action_pub.publish(val)
+        # else:
+        #     array_5 = np.array([7,3,1,2,0,4,5,6,-1])
+        #     for val in array_5:
+        #         self.detected_action_pub.publish(val)
 
         ## data from camera feed
 
@@ -140,7 +138,7 @@ class ActionRecognition(object):
         #     self.count = 0
 
         # data from MP-II dataset
-        #publish_action_labels('s08-d02-cam-002')
+        self.publish_action_labels('s08-d02-cam-002')
 
 
     def action_recognition(self, frames):
@@ -154,11 +152,18 @@ class ActionRecognition(object):
         self.recognition_thread = None
 
     def publish_action_labels(self, video_name):
-        video_ground_truth = self.ground_truth_data[video_name]
+        video_ground_truth = copy.deepcopy(self.ground_truth_data[video_name])
+        previous_action = 0
+        count = len(video_ground_truth)
         for _ in range(len(video_ground_truth)):
             task = heappop(video_ground_truth)
-            print task
+            if previous_action == task.task_number or task.task_number ==0:
+                count = count-1
+                continue
+            previous_action = task.task_number
             self.detected_action_pub.publish(task.task_number)
+        print count
+        self.detected_action_pub.publish(-1)
 
 if __name__ == '__main__':
     rospy.init_node('action_recognition_node')

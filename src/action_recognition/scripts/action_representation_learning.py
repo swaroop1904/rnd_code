@@ -7,7 +7,8 @@ import numpy as np
 from action_recognition.msg import Matrix
 import csv
 import rospkg
-
+from matplotlib.colors import ListedColormap, NoNorm
+import matplotlib.pyplot as plt
 
 class ActionRepresentationLearning(object):
 
@@ -26,12 +27,11 @@ class ActionRepresentationLearning(object):
 
         rospack = rospkg.RosPack()
         package_path = rospack.get_path('action_recognition')
-        self.action_no_label_mapping_file = package_path+"/resources/coffee_action_label_file.csv"
+        self.action_no_label_mapping_file = package_path+"/resources/action_label_file.csv"
         self.build_action_dictionary()
 
     def build_action_dictionary(self):
         self.action_no_label_mapping = {}
-
         with open(self.action_no_label_mapping_file) as f_obj:
             reader = csv.reader(f_obj)
             for row in reader:
@@ -39,12 +39,15 @@ class ActionRepresentationLearning(object):
 
     def action_recognized_cb(self, action):
         if action.data == -1:
+            print len(self.action_map)
+            print len(self.action_sequence)
             if self.first_demo:
                 self.constraints = self.build_constraint_matrix()
             else:
                 self.current_demo_constraints = self.build_constraint_matrix()
                 self.update_constraints()
-            self.constraint_learned_details()
+            #self.constraint_learned_details()
+            #self.draw_constraint_plot()
             self.first_demo = False
             self.action_sequence = []
             self.current_demo_action_map = {}
@@ -85,7 +88,6 @@ class ActionRepresentationLearning(object):
         for action in new_action_list:
             self.action_map[str(prev_action_count)] = action
             prev_action_count += 1
-
         new_action_count = len(self.action_map.values())
         if new_action_count > 0:
             new_constraint_matrix = np.zeros((new_action_count, new_action_count))
@@ -119,9 +121,9 @@ class ActionRepresentationLearning(object):
         print "###############################################"
         for row_idx, row in enumerate(self.constraints):
             action_number_2 = self.action_map[str(row_idx)]
-            action_name_2 = self.action_no_label_mapping[action_number_2]
+            action_name_2 = self.action_no_label_mapping[action_number_2].split('_')[0]
             print "***********************************************"
-            print "preconditions for {0}:".format(action_name_2)
+            print "Constraints present for {0}:".format(action_name_2)
             for col_idx, col in enumerate(row):
                 if col == 0:
                     continue
@@ -130,6 +132,31 @@ class ActionRepresentationLearning(object):
                     action_name_1 = self.action_no_label_mapping[action_number_1]
                     print "{0} has to be performed before {1}".format(action_name_1, action_name_2)
 
+
+    def draw_constraint_plot(self):
+        cmap = ListedColormap(['#00FF8C','#E0E0E0'])
+
+        action_name_list = [self.action_no_label_mapping[self.action_map[str(row_id)]] for row_id in xrange(len(self.action_map))]
+
+        fig = plt.figure()
+        fig.set_figheight(5)
+        fig.set_figwidth(12)
+        ax = fig.add_subplot(1,1,1)
+        ax.set_yticks(xrange(len(self.action_map)))
+        ax.set_xticks(xrange(len(self.action_map)))
+        ax.set_yticklabels(action_name_list, va='bottom', minor=False)
+        ax.set_xticklabels(action_name_list, ha='left', minor=False)
+
+        im = ax.pcolor(self.constraints,cmap=cmap,norm=NoNorm())
+
+        plt.title('Constraint plot')
+        plt.xlabel('Actions')
+        plt.ylabel('Constraint details')
+        plt.grid(True)
+
+        cbar = fig.colorbar(im, orientation='vertical')
+        cbar.ax.set_yticklabels(['not required', 'required'])
+        plt.show()
 
 if __name__ == '__main__':
     rospy.init_node('action_representation_learning_node')
