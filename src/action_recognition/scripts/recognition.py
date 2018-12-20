@@ -138,52 +138,24 @@ class ActionRecognition(object):
         #     self.count = 0
 
         # data from MP-II dataset
-        file_names = ['s10-d11-cam-002',
-                     's08-d02-cam-002',
-                     's19-d01-cam-002',
-                     's08-d04-cam-002',
-                     's19-d07-cam-002',
-                     's11-d06-cam-002',
-                     's13-d12-cam-002',
-                     's19-d06-cam-002',
-                     's20-d07-cam-002',
-                     's11-d01-cam-002',
-                     's14-d11-cam-002',
-                     's14-d08-cam-002',
-                     's10-d10-cam-002',
-                     's11-d14-cam-002',
-                     's15-d07-cam-002',
-                     's11-d11-cam-002',
-                     's14-d09-cam-002',
-                     's13-d09-cam-002',
-                     's12-d07-cam-002',
-                     's13-d13-cam-002',
-                     's12-d14-cam-002',
-                     's17-d13-cam-002',
-                     's10-d02-cam-002',
-                     's08-d11-cam-002',
-                     's16-d09-cam-002',
-                     's17-d05-cam-002',
-                     's19-d09-cam-002',
-                     's15-d14-cam-002',
-                     's13-d11-cam-002',
-                     's16-d11-cam-002',
-                     's13-d08-cam-002',
-                     's11-d12-cam-002',
-                     's12-d09-cam-002',
-                     's18-d11-cam-002',
-                     's16-d06-cam-002',
-                     's19-d12-cam-002',
-                     's19-d10-cam-002',
-                     's11-d13-cam-002',
-                     's16-d01-cam-002',
-                     's15-d03-cam-002',
-                     's12-d10-cam-002',
-                     's08-d14-cam-002',
-                     's12-d05-cam-002',
-                     's17-d02-cam-002']
+        # ignore ,'s19-d09-cam-002' for now
+        #               37                70                   46               30                 36
+        use_case_1 = ['s12-d09-cam-002','s13-d09-cam-002', 's14-d09-cam-002','s16-d09-cam-002']
+        # ignore s18 d11
+        # prepare fruit juice
+        #               45                  46                20                  36
+        use_case_2 = ['s08-d11-cam-002', 's10-d11-cam-002', 's11-d11-cam-002', 's13-d11-cam-002',
+                      's14-d11-cam-002', 's16-d11-cam-002', 's18-d11-cam-002']
+        #              51                   47              135
 
-        for video in file_names:
+        #             19                   18                  22                31
+        use_case_3 = ['s08-d14-cam-002', 's11-d14-cam-002', 's12-d14-cam-002', 's15-d14-cam-002', ]
+        #             45                    25                  16
+        use_case_4 = ['s11-d01-cam-002', 's16-d01-cam-002', 's19-d01-cam-002', ]
+        #              105                16                 23
+        use_case_5 = ['s11-d06-cam-002', 's16-d06-cam-002', 's19-d06-cam-002']
+
+        for video in use_case_1:
             self.publish_action_labels(video)
 
 
@@ -207,10 +179,9 @@ class ActionRecognition(object):
                 count = count-1
                 continue
             previous_action = task.task_number
-            #self.detected_action_pub.publish(task.task_number)
-        if count < 40:
-            print video_name, count
-        #self.detected_action_pub.publish(-1)
+            self.detected_action_pub.publish(task.task_number)
+        #print video_name, count
+        self.detected_action_pub.publish(-1)
 
 if __name__ == '__main__':
     rospy.init_node('action_recognition_node')
