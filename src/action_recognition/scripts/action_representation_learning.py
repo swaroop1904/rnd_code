@@ -9,6 +9,8 @@ import csv
 import rospkg
 from matplotlib.colors import ListedColormap, NoNorm
 import matplotlib.pyplot as plt
+import networkx as nx
+
 
 class ActionRepresentationLearning(object):
 
@@ -27,7 +29,8 @@ class ActionRepresentationLearning(object):
 
         rospack = rospkg.RosPack()
         package_path = rospack.get_path('action_recognition')
-        self.action_no_label_mapping_file = package_path+"/resources/action_label_file.csv"
+        #coffee_use_case_1/coffee_action_label_file.csv
+        self.action_no_label_mapping_file = package_path+"/use_case/coffee_use_case_1/coffee_action_label_file.csv"
         self.build_action_dictionary()
 
     def build_action_dictionary(self):
@@ -44,8 +47,10 @@ class ActionRepresentationLearning(object):
             else:
                 self.current_demo_constraints = self.build_constraint_matrix()
                 self.update_constraints()
-            self.constraint_learned_details()
+            #self.constraint_learned_details()
             self.draw_constraint_plot()
+            constraint_graph = self.create_constraint_graph()
+            self.draw_constraint_graph(constraint_graph)
             self.first_demo = False
             self.action_sequence = []
             self.current_demo_action_map = {}
@@ -100,8 +105,6 @@ class ActionRepresentationLearning(object):
 
         for i in range(self.current_demo_constraints.shape[0]):
             action1 = self.current_demo_action_map[str(i)]
-            print "*****************"
-            print action1
             for j in range(self.current_demo_constraints.shape[1]):
                 action2 = self.current_demo_action_map[str(j)]
                 action1_idx = self.get_action_idx(action1)
@@ -115,6 +118,8 @@ class ActionRepresentationLearning(object):
             action1 = self.action_map[str(diff_index[0])]
             if action1 not in previous_action_list:
                 self.constraints[diff_index] = 0
+            if action1 in new_action_list:
+                self.constraints[diff_index] = 1
 
         # for i in range(self.current_demo_constraints.shape[0]):
         #     action1 = self.current_demo_action_map[str(i)]
@@ -179,6 +184,42 @@ class ActionRepresentationLearning(object):
 
         cbar = fig.colorbar(im, orientation='vertical')
         cbar.ax.set_yticklabels(['not required', 'required'])
+        plt.show()
+
+
+    def create_constraint_graph(self):
+        constraint_graph = nx.DiGraph()
+        for i, action_constraints in enumerate(self.constraints):
+            action_number_2 = self.action_map[str(i)].split('_')[0]
+            action_name_2 = self.action_no_label_mapping[action_number_2]
+            for j, constraint in enumerate(action_constraints):
+                action_number_1 = self.action_map[str(j)].split('_')[0]
+                action_name_1 = self.action_no_label_mapping[action_number_1]
+                if constraint > 0:
+                    constraint_graph.add_edge(action_name_1, action_name_2)
+        return constraint_graph
+
+    def draw_constraint_graph(self, constraint_graph, node_colour='g', edge_colour='b'):
+        '''
+
+        Keyword arguments:
+        constraint_graph -- a networkx.DiGraph instance
+        node_colour -- colour used for the nodes (can be either a single character
+                       or a list of colours for each node)
+        edge_colour -- colour used for the edges (can be either a single character
+                       or a list of colours for each edge)
+
+        '''
+        positions = nx.circular_layout(constraint_graph)
+        pos_higher = {}
+        for k, v in positions.items():
+            pos_higher[k] = (v[0], v[1]+0.1)
+
+        nx.draw(constraint_graph, pos=positions,
+                node_color=node_colour, edge_color=edge_colour,
+                arrowsize=30)
+        nx.draw_networkx_labels(constraint_graph, pos_higher, font_size=16, \
+                                font_weight='bold')
         plt.show()
 
 if __name__ == '__main__':
