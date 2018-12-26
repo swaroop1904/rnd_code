@@ -29,8 +29,11 @@ class ActionRepresentationLearning(object):
 
         rospack = rospkg.RosPack()
         package_path = rospack.get_path('action_recognition')
-        #coffee_use_case_1/coffee_action_label_file.csv
-        self.action_no_label_mapping_file = package_path+"/use_case/coffee_use_case_1/coffee_action_label_file.csv"
+        #self.action_no_label_mapping_file = package_path+"/use_case/coffee_use_case_1/coffee_action_label_file.csv"
+        #self.action_no_label_mapping_file = package_path+"/use_case/use_case_2/main_files/usecase_2_action_mapping.csv"
+        self.action_no_label_mapping_file = package_path+"/use_case/use_case_5/main_files/usecase_5_action_mapping.csv"
+        # self.action_no_label_mapping_file = package_path+"/use_case/use_case_4/main_files/usecase_4_action_mapping.csv"
+        # self.action_no_label_mapping_file = package_path+"/use_case/use_case_5/main_files/usecase_5_action_mapping.csv"
         self.build_action_dictionary()
 
     def build_action_dictionary(self):

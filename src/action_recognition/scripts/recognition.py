@@ -15,6 +15,7 @@ import numpy as np
 import threading
 
 from heapq import heappop
+from heapq import heapify
 import csv
 import copy
 
@@ -77,29 +78,17 @@ class ActionRecognition(object):
 
         # read the csv files to get the action labels for validation the action representation model
         # with the MP-II dataset
-        self.csv_path = package_path+"/resources/detectionGroundtruth-1-0.csv"
-        self.get_ground_truth_data()
-
-
-    def get_ground_truth_data(self):
-        ground_truth_data = dict()
-        with open(self.csv_path) as f_obj:
-            reader = csv.reader(f_obj)
-            for row in reader:
-                task = task_data(int(row[2]), int(row[3]), int(row[4])-1)
-                frame_array = ground_truth_data.get(row[1], None)
-                if frame_array == None:
-                    frame_array = []
-                frame_array.append(task)
-                ground_truth_data[row[1]] = frame_array
-        self.ground_truth_data = ground_truth_data
+        #self.csv_path = package_path+"/use_case/use_case_2/main_files/usecase_2_complete.csv"
+        self.csv_path = package_path+"/use_case/use_case_5/main_files/usecase_5_complete.csv"
+        #self.csv_path = package_path+"/use_case/use_case_4/main_files/usecase_4_complete.csv"
+        #self.csv_path = package_path+"/use_case/use_case_5/main_files/usecase_5_complete.csv"
 
     def action_recognition_callback(self, data):
         ## hardcoded data
 
         # if self.learning:
-        #     array_1 = np.array([0,1,2,3,4,5,6,7,-1])
-        #     array_2 = np.array([2,1,0,3,6,4,5,7,-1])
+        #     array_2 = np.array([0,1,2,3,4,5,6,7,-1])
+        #     array_1 = np.array([6,4,5,7,-1])
         #     array_3 = np.array([5,4,2,1,0,3,6,7,-1])
         #     for val in array_1:
         #         self.detected_action_pub.publish(val)
@@ -107,12 +96,8 @@ class ActionRecognition(object):
         #         self.detected_action_pub.publish(val)
         #     for val in array_3:
         #        self.detected_action_pub.publish(val)
-            # for val in array_2:
-            #     self.detected_action_pub.publish(val)
-            # for val in array_3:
-            #     self.detected_action_pub.publish(val)
-            # for val in array_4:
-            #     self.detected_action_pub.publish(val)
+        #     # for val in array_4:
+        #     #     self.detected_action_pub.publish(val)
         # else:
         #     array_5 = np.array([7,3,1,2,0,4,5,6,-1])
         #     for val in array_5:
@@ -138,25 +123,7 @@ class ActionRecognition(object):
         #     self.count = 0
 
         # data from MP-II dataset
-        # ignore ,'s19-d09-cam-002' for now
-        #               37                70                   46               30                 36
-        use_case_1 = ['s12-d09-cam-002','s13-d09-cam-002', 's14-d09-cam-002','s16-d09-cam-002']
-        # ignore s18 d11
-        # prepare fruit juice
-        #               45                  46                20                  36
-        use_case_2 = ['s08-d11-cam-002', 's10-d11-cam-002', 's11-d11-cam-002', 's13-d11-cam-002',
-                      's14-d11-cam-002', 's16-d11-cam-002', 's18-d11-cam-002']
-        #              51                   47              135
-
-        #             19                   18                  22                31
-        use_case_3 = ['s08-d14-cam-002', 's11-d14-cam-002', 's12-d14-cam-002', 's15-d14-cam-002', ]
-        #             45                    25                  16
-        use_case_4 = ['s11-d01-cam-002', 's16-d01-cam-002', 's19-d01-cam-002', ]
-        #              105                16                 23
-        use_case_5 = ['s11-d06-cam-002', 's16-d06-cam-002', 's19-d06-cam-002']
-
-        for video in use_case_1:
-            self.publish_action_labels(video)
+        self.publish_action_labels()
 
 
     def action_recognition(self, frames):
@@ -169,19 +136,11 @@ class ActionRecognition(object):
         self.recognizing_action = False
         self.recognition_thread = None
 
-    def publish_action_labels(self, video_name):
-        video_ground_truth = copy.deepcopy(self.ground_truth_data[video_name])
-        previous_action = 0
-        count = len(video_ground_truth)
-        for _ in range(len(video_ground_truth)):
-            task = heappop(video_ground_truth)
-            if previous_action == task.task_number or task.task_number ==0:
-                count = count-1
-                continue
-            previous_action = task.task_number
-            self.detected_action_pub.publish(task.task_number)
-        #print video_name, count
-        self.detected_action_pub.publish(-1)
+    def publish_action_labels(self):
+        with open(self.csv_path) as f_obj:
+            reader = csv.reader(f_obj)
+            for row in reader:
+                self.detected_action_pub.publish(int(row[0]))
 
 if __name__ == '__main__':
     rospy.init_node('action_recognition_node')
