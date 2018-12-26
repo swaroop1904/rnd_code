@@ -1,0 +1,102 @@
+s16-d11-cam-002,1,221,0, Background activity, Background activity
+s16-d11-cam-002,222,357,54,take out from drawer,take out juicer from drawer
+s16-d11-cam-002,368,488,54,take out from drawer,take out measuring cup from drawer
+s16-d11-cam-002,465,519,19,open/close drawer,
+s16-d11-cam-002,519,773,54,take out from drawer,take out chopping board from drawer
+s16-d11-cam-002,773,808,19,open/close drawer,take out peeler from drawer
+s16-d11-cam-002,808,946,54,take out from drawer,take out knife from drawer
+s16-d11-cam-002,947,995,0, Background activity, Background activity
+s16-d11-cam-002,996,1682,53,take out from cupboard,take out apple from cupboard
+s16-d11-cam-002,1682,1689,,,take out lemon from cupboard
+s16-d11-cam-002,1704,1959,62,wash objects,wash apple
+s16-d11-cam-002,1959,2001,31,put on cutting-board,put apple on chopping board
+s16-d11-cam-002,2002,2039,0, Background activity, Background activity
+s16-d11-cam-002,2040,2192,62,wash objects,wash apple
+s16-d11-cam-002,2192,2288,31,put on cutting-board,put apple on chopping board
+s16-d11-cam-002,2289,2354,0, Background activity, Background activity
+s16-d11-cam-002,2355,2472,62,wash objects,wash lemon
+s16-d11-cam-002,2473,2569,0, Background activity, Background activity
+s16-d11-cam-002,2570,2625,31,put on cutting-board,put lemon chopping board
+s16-d11-cam-002,2626,2748,0, Background activity, Background activity
+s16-d11-cam-002,2749,2833,2,cut apart,cut apart apple
+s16-d11-cam-002,2834,2964,0, Background activity, Background activity
+s16-d11-cam-002,2965,3565,43,squeeze,squeeze apple
+s16-d11-cam-002,3566,3798,0, Background activity, Background activity
+s16-d11-cam-002,3799,4006,2,cut apart,cut apart apple
+s16-d11-cam-002,4007,4121,0, Background activity, Background activity
+s16-d11-cam-002,4122,5778,43,squeeze,squeeze apple
+s16-d11-cam-002,5779,5857,0, Background activity, Background activity
+s16-d11-cam-002,5858,7066,43,squeeze,squeeze apple
+s16-d11-cam-002,7067,7481,0, Background activity, Background activity
+s16-d11-cam-002,7482,7601,2,cut apart,cut apart lemon
+s16-d11-cam-002,7617,7691,2,cut apart,
+s16-d11-cam-002,7692,7721,0, Background activity, Background activity
+s16-d11-cam-002,7722,7814,2,cut apart,cut apart apple
+s16-d11-cam-002,7830,7960,2,cut apart,cut apart apple
+s16-d11-cam-002,7961,8028,0, Background activity, Background activity
+s16-d11-cam-002,8029,8163,19,open/close drawer,
+s16-d11-cam-002,8164,8199,0, Background activity, Background activity
+s16-d11-cam-002,8200,8752,54,take out from drawer,
+s16-d11-cam-002,8753,8851,0, Background activity, Background activity
+s16-d11-cam-002,8852,8926,48,take \& put in drawer,
+s16-d11-cam-002,8928,8996,54,take out from drawer,
+s16-d11-cam-002,8997,9130,0, Background activity, Background activity
+s16-d11-cam-002,9131,9186,26,pull out,
+s16-d11-cam-002,9187,9255,0, Background activity, Background activity
+s16-d11-cam-002,9256,9370,24,plug in/out,
+s16-d11-cam-002,9371,9510,0, Background activity, Background activity
+s16-d11-cam-002,9511,9601,19,open/close drawer,
+s16-d11-cam-002,9619,9664,19,open/close drawer,
+s16-d11-cam-002,9665,9708,0, Background activity, Background activity
+s16-d11-cam-002,9709,9770,19,open/close drawer,
+s16-d11-cam-002,9788,9951,54,take out from drawer,
+s16-d11-cam-002,9952,9995,0, Background activity, Background activity
+s16-d11-cam-002,9996,10030,28,put in bowl,
+s16-d11-cam-002,10030,10085,28,put in bowl,
+s16-d11-cam-002,10086,10139,0, Background activity, Background activity
+s16-d11-cam-002,10140,10229,2,cut apart,
+s16-d11-cam-002,10230,10316,0, Background activity, Background activity
+s16-d11-cam-002,10317,10356,2,cut apart,
+s16-d11-cam-002,10356,10420,2,cut apart,
+s16-d11-cam-002,10421,10455,0, Background activity, Background activity
+s16-d11-cam-002,10456,10585,2,cut apart,
+s16-d11-cam-002,10586,10636,0, Background activity, Background activity
+s16-d11-cam-002,10637,10686,2,cut apart,
+s16-d11-cam-002,10686,10751,2,cut apart,
+s16-d11-cam-002,10752,10823,0, Background activity, Background activity
+s16-d11-cam-002,10824,10933,2,cut apart,
+s16-d11-cam-002,10933,11136,2,cut apart,
+s16-d11-cam-002,11136,11298,2,cut apart,
+s16-d11-cam-002,11299,11389,0, Background activity, Background activity
+s16-d11-cam-002,11390,11750,28,put in bowl,
+s16-d11-cam-002,11751,11914,0, Background activity, Background activity
+s16-d11-cam-002,11915,11956,1,change temperature,
+s16-d11-cam-002,11957,12012,0, Background activity, Background activity
+s16-d11-cam-002,12013,12651,27,puree,
+s16-d11-cam-002,12652,12810,0, Background activity, Background activity
+s16-d11-cam-002,12811,13021,53,take out from cupboard,
+s16-d11-cam-002,13021,13141,38,screw open,
+s16-d11-cam-002,13142,13233,0, Background activity, Background activity
+s16-d11-cam-002,13234,13380,25,pour,
+s16-d11-cam-002,13381,13421,0, Background activity,
+s16-d11-cam-002,13422,13536,37,screw close,
+s16-d11-cam-002,13536,13566,15,move from X to Y,
+s16-d11-cam-002,13567,13634,0, Background activity, Background activity
+s16-d11-cam-002,13635,15016,27,puree,
+s16-d11-cam-002,15017,15179,0, Background activity, Background activity
+s16-d11-cam-002,15180,15229,38,screw open,
+s16-d11-cam-002,15229,15400,25,pour,
+s16-d11-cam-002,15400,15470,37,screw close,
+s16-d11-cam-002,15471,15572,0, Background activity, Background activity
+s16-d11-cam-002,15573,17685,27,puree,
+s16-d11-cam-002,17686,17905,0, Background activity, Background activity
+s16-d11-cam-002,17906,18075,25,pour,
+s16-d11-cam-002,18076,18177,0, Background activity, Background activity
+s16-d11-cam-002,18178,18271,38,screw open,
+s16-d11-cam-002,18271,18433,25,pour,
+s16-d11-cam-002,18433,18513,37,screw close,
+s16-d11-cam-002,18514,18612,0, Background activity, Background activity
+s16-d11-cam-002,18613,18650,13,lid: remove,
+s16-d11-cam-002,18669,18734,25,pour,
+s16-d11-cam-002,18734,18768,12,lid: put on,
+s16-d11-cam-002,18769,18999,0, Background activity, Background activity

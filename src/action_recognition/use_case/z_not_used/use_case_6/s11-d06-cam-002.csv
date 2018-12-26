@@ -1,0 +1,178 @@
+s11-d06-cam-002,1,132,0, Background activity
+s11-d06-cam-002,133,270,54,take out from drawer
+s11-d06-cam-002,276,346,54,take out from drawer
+s11-d06-cam-002,346,410,19,open/close drawer
+s11-d06-cam-002,418,556,54,take out from drawer
+s11-d06-cam-002,556,606,19,open/close drawer
+s11-d06-cam-002,606,709,54,take out from drawer
+s11-d06-cam-002,709,779,19,open/close drawer
+s11-d06-cam-002,807,1221,53,take out from cupboard
+s11-d06-cam-002,1222,1362,34,remove from package
+s11-d06-cam-002,1372,1501,34,remove from package
+s11-d06-cam-002,1510,1623,34,remove from package
+s11-d06-cam-002,1650,1794,47,take \& put in cupboard
+s11-d06-cam-002,1795,1841,0, Background activity
+s11-d06-cam-002,1842,1888,13,lid: remove
+s11-d06-cam-002,1889,1934,0, Background activity
+s11-d06-cam-002,1935,2212,10,fill water from tap
+s11-d06-cam-002,2213,2385,0, Background activity
+s11-d06-cam-002,2386,2490,54,take out from drawer
+s11-d06-cam-002,2491,2549,0, Background activity
+s11-d06-cam-002,2550,2733,53,take out from cupboard
+s11-d06-cam-002,2734,2766,0, Background activity
+s11-d06-cam-002,2767,2936,5,cut off ends
+s11-d06-cam-002,2936,3690,23,peel
+s11-d06-cam-002,3691,3728,0, Background activity
+s11-d06-cam-002,3729,3938,5,cut off ends
+s11-d06-cam-002,3938,4810,23,peel
+s11-d06-cam-002,4811,4851,0, Background activity
+s11-d06-cam-002,4852,5016,62,wash objects
+s11-d06-cam-002,5016,5041,39,shake
+s11-d06-cam-002,5042,5184,0, Background activity
+s11-d06-cam-002,5185,5423,59,throw in garbage
+s11-d06-cam-002,5424,5523,0, Background activity
+s11-d06-cam-002,5524,5567,2,cut apart
+s11-d06-cam-002,5581,5947,7,cut slices
+s11-d06-cam-002,5952,6476,7,cut slices
+s11-d06-cam-002,6496,6571,2,cut apart
+s11-d06-cam-002,6586,6982,7,cut slices
+s11-d06-cam-002,6988,7365,7,cut slices
+s11-d06-cam-002,7366,7436,0, Background activity
+s11-d06-cam-002,7437,7635,53,take out from cupboard
+s11-d06-cam-002,7641,7713,1,change temperature
+s11-d06-cam-002,7724,7846,1,change temperature
+s11-d06-cam-002,7863,7931,38,screw open
+s11-d06-cam-002,7940,8078,25,pour
+s11-d06-cam-002,8078,8263,42,spread
+s11-d06-cam-002,8264,8299,0, Background activity
+s11-d06-cam-002,8300,8528,37,screw close
+s11-d06-cam-002,8529,8562,0, Background activity
+s11-d06-cam-002,8563,8741,29,put in pan/pot
+s11-d06-cam-002,8742,8848,0, Background activity
+s11-d06-cam-002,8849,8985,1,change temperature
+s11-d06-cam-002,8986,9029,0, Background activity
+s11-d06-cam-002,9030,10240,23,peel
+s11-d06-cam-002,10264,11037,23,peel
+s11-d06-cam-002,11056,11166,62,wash objects
+s11-d06-cam-002,11166,11203,39,shake
+s11-d06-cam-002,11232,11256,39,shake
+s11-d06-cam-002,11261,11353,9,dry
+s11-d06-cam-002,11354,11403,0, Background activity
+s11-d06-cam-002,11404,11545,59,throw in garbage
+s11-d06-cam-002,11566,11700,54,take out from drawer
+s11-d06-cam-002,11715,12156,45,stir
+s11-d06-cam-002,12157,12214,0, Background activity
+s11-d06-cam-002,12215,12335,62,wash objects
+s11-d06-cam-002,12336,12420,0, Background activity
+s11-d06-cam-002,12421,12547,1,change temperature
+s11-d06-cam-002,12548,12688,0, Background activity
+s11-d06-cam-002,12689,12976,7,cut slices
+s11-d06-cam-002,12994,13152,7,cut slices
+s11-d06-cam-002,13153,13216,0, Background activity
+s11-d06-cam-002,13217,13293,8,cut stripes
+s11-d06-cam-002,13293,13364,3,cut dice
+s11-d06-cam-002,13365,13405,0, Background activity
+s11-d06-cam-002,13406,13498,1,change temperature
+s11-d06-cam-002,13499,13593,0, Background activity
+s11-d06-cam-002,13594,13679,1,change temperature
+s11-d06-cam-002,13682,14073,45,stir
+s11-d06-cam-002,14074,14146,0, Background activity
+s11-d06-cam-002,14147,14238,8,cut stripes
+s11-d06-cam-002,14238,14336,3,cut dice
+s11-d06-cam-002,14354,14390,8,cut stripes
+s11-d06-cam-002,14390,14434,3,cut dice
+s11-d06-cam-002,14434,14494,8,cut stripes
+s11-d06-cam-002,14494,14549,3,cut dice
+s11-d06-cam-002,14562,14616,8,cut stripes
+s11-d06-cam-002,14616,14677,3,cut dice
+s11-d06-cam-002,14698,14761,8,cut stripes
+s11-d06-cam-002,14761,14850,3,cut dice
+s11-d06-cam-002,14862,14944,8,cut stripes
+s11-d06-cam-002,14944,15061,3,cut dice
+s11-d06-cam-002,15082,15333,29,put in pan/pot
+s11-d06-cam-002,15334,15392,0, Background activity
+s11-d06-cam-002,15393,15462,45,stir
+s11-d06-cam-002,15463,15532,1,change temperature
+s11-d06-cam-002,15534,15674,45,stir
+s11-d06-cam-002,15675,15842,0, Background activity
+s11-d06-cam-002,15843,16152,55,take out from fridge
+s11-d06-cam-002,16153,16196,0, Background activity
+s11-d06-cam-002,16197,16615,62,wash objects
+s11-d06-cam-002,16616,16717,0, Background activity
+s11-d06-cam-002,16718,16790,9,dry
+s11-d06-cam-002,16791,16912,0, Background activity
+s11-d06-cam-002,16913,16988,5,cut off ends
+s11-d06-cam-002,16989,17089,0, Background activity
+s11-d06-cam-002,17090,17349,2,cut apart
+s11-d06-cam-002,17350,17549,0, Background activity
+s11-d06-cam-002,17550,17602,8,cut stripes
+s11-d06-cam-002,17624,17657,8,cut stripes
+s11-d06-cam-002,17658,17710,0, Background activity
+s11-d06-cam-002,17711,17752,8,cut stripes
+s11-d06-cam-002,17764,17812,8,cut stripes
+s11-d06-cam-002,17813,17850,0, Background activity
+s11-d06-cam-002,17851,18247,45,stir
+s11-d06-cam-002,18275,18358,1,change temperature
+s11-d06-cam-002,18359,18414,0, Background activity
+s11-d06-cam-002,18415,18608,3,cut dice
+s11-d06-cam-002,18617,18812,3,cut dice
+s11-d06-cam-002,18813,18883,0, Background activity
+s11-d06-cam-002,18884,19089,3,cut dice
+s11-d06-cam-002,19090,19123,0, Background activity
+s11-d06-cam-002,19124,19346,3,cut dice
+s11-d06-cam-002,19347,19416,0, Background activity
+s11-d06-cam-002,19417,19486,59,throw in garbage
+s11-d06-cam-002,19491,19622,29,put in pan/pot
+s11-d06-cam-002,19623,19668,0, Background activity
+s11-d06-cam-002,19669,19713,12,lid: put on
+s11-d06-cam-002,19720,19767,1,change temperature
+s11-d06-cam-002,19791,20179,45,stir
+s11-d06-cam-002,20180,20245,0, Background activity
+s11-d06-cam-002,20246,20406,55,take out from fridge
+s11-d06-cam-002,20407,20614,0, Background activity
+s11-d06-cam-002,20615,20735,7,cut slices
+s11-d06-cam-002,20736,20781,0, Background activity
+s11-d06-cam-002,20782,21006,23,peel
+s11-d06-cam-002,21007,21181,0, Background activity
+s11-d06-cam-002,21182,21415,8,cut stripes
+s11-d06-cam-002,21445,21812,3,cut dice
+s11-d06-cam-002,21813,21942,0, Background activity
+s11-d06-cam-002,21943,22112,29,put in pan/pot
+s11-d06-cam-002,22112,22189,12,lid: put on
+s11-d06-cam-002,22190,22285,0, Background activity
+s11-d06-cam-002,22286,22582,45,stir
+s11-d06-cam-002,22582,22634,1,change temperature
+s11-d06-cam-002,22635,22741,0, Background activity
+s11-d06-cam-002,22742,22836,59,throw in garbage
+s11-d06-cam-002,22841,22976,55,take out from fridge
+s11-d06-cam-002,22977,23033,0, Background activity
+s11-d06-cam-002,23034,23186,34,remove from package
+s11-d06-cam-002,23191,23538,31,put on cutting-board
+s11-d06-cam-002,23548,23849,49,take \& put in fridge
+s11-d06-cam-002,23850,23911,0, Background activity
+s11-d06-cam-002,23912,24446,62,wash objects
+s11-d06-cam-002,24447,24551,0, Background activity
+s11-d06-cam-002,24552,24623,9,dry
+s11-d06-cam-002,24624,24856,0, Background activity
+s11-d06-cam-002,24857,24934,1,change temperature
+s11-d06-cam-002,24935,24984,0, Background activity
+s11-d06-cam-002,24985,26185,7,cut slices
+s11-d06-cam-002,26210,26486,29,put in pan/pot
+s11-d06-cam-002,26487,26548,0, Background activity
+s11-d06-cam-002,26549,26632,54,take out from drawer
+s11-d06-cam-002,26643,26866,45,stir
+s11-d06-cam-002,26867,26935,0, Background activity
+s11-d06-cam-002,26936,27336,29,put in pan/pot
+s11-d06-cam-002,27337,27482,0, Background activity
+s11-d06-cam-002,27483,27689,45,stir
+s11-d06-cam-002,27690,27764,0, Background activity
+s11-d06-cam-002,27765,27878,53,take out from cupboard
+s11-d06-cam-002,27878,27941,38,screw open
+s11-d06-cam-002,27942,27973,0, Background activity
+s11-d06-cam-002,27974,28172,41,spice
+s11-d06-cam-002,28178,28262,37,screw close
+s11-d06-cam-002,28263,28368,0, Background activity
+s11-d06-cam-002,28369,28624,45,stir
+s11-d06-cam-002,28625,28706,0, Background activity
+s11-d06-cam-002,28707,28789,12,lid: put on
+s11-d06-cam-002,28790,28892,0, Background activity

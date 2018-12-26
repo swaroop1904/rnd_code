@@ -1,0 +1,15 @@
+54,take out from drawer,take out vessel from drawer
+62,wash objects,wash vessel
+10,fill water from tap,fill water into vessel from tap
+15,move from X to Y,keep vessel on stove
+1,change temperature,turn on stove
+48,take \& put in drawer,
+53,take out from cupboard,take out cup from cupboard
+53,take out from cupboard,take out coffee mix from cupboard
+35,rip open,rip open coffee mix 
+15,move from X to Y,put coffee mix into mug
+59,throw in garbage,throw waste in garbage
+54,take out from drawer,take out spoon from drawer
+19,open/close drawer,open drawer
+25,pour,pour hot water into cup
+45,stir,stir

@@ -1,0 +1,25 @@
+54,take out from drawer,take out masher from drawer
+54,take out from drawer,take out vessel from drawer
+54,take out from drawer,take out chopping board from drawer
+53,take out from cupboard,take out potato from cupboard
+54,take out from drawer,take out peeler from drawer
+23,peel,peel potato
+29,put in pan/pot,put peeled potato in vessel
+44,stamp,mash potato in vessel
+55,take out from fridge,take out butter from fridge
+54,take out from drawer,take out knife from drawer
+2,cut apart,cut butter apart
+29,put in pan/pot,put butter in pan
+49,take \& put in fridge,put butter in fridge
+57,take out from spice holder,take out salt from spice holder
+38,screw open,screw open salt
+41,spice,add salt to vessel
+37,screw close,screw close salt
+51,take \& put in spice holder,put salt in spice holder
+15,move from X to Y,keep vessel on stove
+1,change temperature,turn on stove
+44,stamp,mash potato in vessel
+1,change temperature,turn off stove
+,,take out plate from drawer
+44,stamp,mash potato in vessel
+,,put contents of vessel in plate

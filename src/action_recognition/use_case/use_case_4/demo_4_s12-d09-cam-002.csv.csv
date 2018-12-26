@@ -1,0 +1,43 @@
+53,take out from cupboard,
+54,take out from drawer,take out measuring cup from drawer
+54,take out from drawer,take out vessel from drawer
+33,read,
+10,fill water from tap,fill water into measuring cup from tap
+33,read,
+25,pour,
+33,read,
+25,pour,
+33,read,
+25,pour,pour water into vessel
+15,move from X to Y,keep vessel on stove
+1,change temperature,change temperature
+34,remove from package,remove from package
+22,package X,
+47,take \& put in cupboard,put remaining packets in cupboard
+55,take out from fridge,take milk from fridge
+33,read,
+18,open/close cupboard,
+54,take out from drawer,take beater from drawer
+19,open/close drawer,
+35,rip open,rip packed open
+63,whisk,
+1,change temperature,
+1,change temperature,
+63,whisk,
+29,put in pan/pot,put contents into vessel
+63,whisk,whisk
+1,change temperature,put contents into vessel
+63,whisk,whisk
+38,screw open,screw open milk
+33,read,
+25,pour,pour milk into measuring cup
+25,pour,pour milk into vessel
+63,whisk,whisk
+29,put in pan/pot,
+63,whisk,whisk
+1,change temperature,
+63,whisk,
+63,whisk,
+15,move from X to Y,remove from stove
+15,move from X to Y,
+15,move from X to Y,

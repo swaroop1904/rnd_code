@@ -1,0 +1,41 @@
+s19-d06-cam-002,1,97,0, Background activity
+s19-d06-cam-002,98,321,54,take out from drawer
+s19-d06-cam-002,322,363,0, Background activity
+s19-d06-cam-002,364,519,53,take out from cupboard
+s19-d06-cam-002,526,584,54,take out from drawer
+s19-d06-cam-002,585,783,0, Background activity
+s19-d06-cam-002,784,1024,61,wash hands
+s19-d06-cam-002,1025,1100,0, Background activity
+s19-d06-cam-002,1101,1378,10,fill water from tap
+s19-d06-cam-002,1379,1469,0, Background activity
+s19-d06-cam-002,1470,1614,25,pour
+s19-d06-cam-002,1616,1706,1,change temperature
+s19-d06-cam-002,1712,1773,1,change temperature
+s19-d06-cam-002,1774,1899,0, Background activity
+s19-d06-cam-002,1900,2104,33,read
+s19-d06-cam-002,2107,2183,35,rip open
+s19-d06-cam-002,2184,2222,0, Background activity
+s19-d06-cam-002,2223,2397,29,put in pan/pot
+s19-d06-cam-002,2398,2468,0, Background activity
+s19-d06-cam-002,2469,2865,29,put in pan/pot
+s19-d06-cam-002,2866,2928,0, Background activity
+s19-d06-cam-002,2929,3010,59,throw in garbage
+s19-d06-cam-002,3014,3041,64,wipe clean
+s19-d06-cam-002,3050,3147,64,wipe clean
+s19-d06-cam-002,3175,3401,64,wipe clean
+s19-d06-cam-002,3407,3497,1,change temperature
+s19-d06-cam-002,3499,3619,64,wipe clean
+s19-d06-cam-002,3636,3675,19,open/close drawer
+s19-d06-cam-002,3676,3821,0, Background activity
+s19-d06-cam-002,3822,3844,54,take out from drawer
+s19-d06-cam-002,3849,4196,63,whisk
+s19-d06-cam-002,4217,4334,59,throw in garbage
+s19-d06-cam-002,4335,4448,0, Background activity
+s19-d06-cam-002,4449,4534,62,wash objects
+s19-d06-cam-002,4535,4572,0, Background activity
+s19-d06-cam-002,4573,4675,9,dry
+s19-d06-cam-002,4684,4758,48,take \& put in drawer
+s19-d06-cam-002,4761,4961,64,wipe clean
+s19-d06-cam-002,4962,5091,0, Background activity
+s19-d06-cam-002,5092,5494,63,whisk
+s19-d06-cam-002,5495,5580,0, Background activity

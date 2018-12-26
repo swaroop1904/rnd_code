@@ -1,0 +1,38 @@
+53,take orange from cupboard
+54,take lemon from cupboard
+54,take out juicer from drawer
+,take out peeler from drawer
+62,wash orange
+23,peel orange
+19,open drawer
+54,take chopping board from drawer
+54,take out knife from drawer
+62,wash orange
+23,peel orange
+62,wash lemon
+23,peel lemon
+13,remove lid from juicer
+62,wash juicer
+12,put lid on juicer
+2,cut orange apart
+43,squeeze orange
+43,squeeze orange
+43,squeeze orange
+2,cut orange apart
+43,squeeze orange
+43,squeeze orange
+18,open cupboard
+53,take glass from cupboard
+18,close cupboard
+25,pour juice into glass
+2,cut lemon apart
+13,remove lid from juicer
+12,put lid on juicer
+43,squeeze lemon
+43,squeeze lemon
+25,pour juice into glass
+53,take sweetener from cupboard
+38,screw open sweetener
+25,pour sweetener into glass
+37,screw close sweetener
+47,put sweetener in cupboard

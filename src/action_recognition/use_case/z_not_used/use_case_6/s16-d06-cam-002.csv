@@ -1,0 +1,42 @@
+s16-d06-cam-002,1,172,0, Background activity
+s16-d06-cam-002,173,302,54,take out from drawer
+s16-d06-cam-002,304,401,54,take out from drawer
+s16-d06-cam-002,402,490,0, Background activity
+s16-d06-cam-002,491,673,53,take out from cupboard
+s16-d06-cam-002,674,755,0, Background activity
+s16-d06-cam-002,756,860,35,rip open
+s16-d06-cam-002,861,898,0, Background activity
+s16-d06-cam-002,899,1713,29,put in pan/pot
+s16-d06-cam-002,1729,1855,33,read
+s16-d06-cam-002,1861,2179,10,fill water from tap
+s16-d06-cam-002,2180,2214,0, Background activity
+s16-d06-cam-002,2215,2435,25,pour
+s16-d06-cam-002,2436,2470,0, Background activity
+s16-d06-cam-002,2471,2576,15,move from X to Y
+s16-d06-cam-002,2582,2648,1,change temperature
+s16-d06-cam-002,2655,2707,1,change temperature
+s16-d06-cam-002,2708,2751,0, Background activity
+s16-d06-cam-002,2752,2823,1,change temperature
+s16-d06-cam-002,2824,2857,0, Background activity
+s16-d06-cam-002,2858,3110,54,take out from drawer
+s16-d06-cam-002,3114,3205,19,open/close drawer
+s16-d06-cam-002,3205,3445,19,open/close drawer
+s16-d06-cam-002,3455,4522,45,stir
+s16-d06-cam-002,4523,4748,0, Background activity
+s16-d06-cam-002,4749,5150,45,stir
+s16-d06-cam-002,5151,5453,0, Background activity
+s16-d06-cam-002,5454,5670,45,stir
+s16-d06-cam-002,5671,6109,0, Background activity
+s16-d06-cam-002,6110,6757,45,stir
+s16-d06-cam-002,6758,7280,0, Background activity
+s16-d06-cam-002,7281,7526,45,stir
+s16-d06-cam-002,7527,7857,0, Background activity
+s16-d06-cam-002,7858,8607,45,stir
+s16-d06-cam-002,8608,8730,0, Background activity
+s16-d06-cam-002,8731,8966,53,take out from cupboard
+s16-d06-cam-002,8972,9131,54,take out from drawer
+s16-d06-cam-002,9132,9300,0, Background activity
+s16-d06-cam-002,9301,9363,1,change temperature
+s16-d06-cam-002,9363,9547,25,pour
+s16-d06-cam-002,9547,9692,25,pour
+s16-d06-cam-002,9693,10067,0, Background activity

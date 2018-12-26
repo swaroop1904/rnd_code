@@ -1,0 +1,254 @@
+s18-d11-cam-002,1,440,0, Background activity
+s18-d11-cam-002,441,926,61,wash hands
+s18-d11-cam-002,942,981,39,shake
+s18-d11-cam-002,982,1012,0, Background activity
+s18-d11-cam-002,1013,1126,9,dry
+s18-d11-cam-002,1135,1201,15,move from X to Y
+s18-d11-cam-002,1202,1289,0, Background activity
+s18-d11-cam-002,1290,1478,54,take out from drawer
+s18-d11-cam-002,1479,1776,0, Background activity
+s18-d11-cam-002,1777,1915,54,take out from drawer
+s18-d11-cam-002,1916,2012,0, Background activity
+s18-d11-cam-002,2013,2296,62,wash objects
+s18-d11-cam-002,2297,2557,0, Background activity
+s18-d11-cam-002,2558,2929,53,take out from cupboard
+s18-d11-cam-002,2930,2967,0, Background activity
+s18-d11-cam-002,2968,3027,18,open/close cupboard
+s18-d11-cam-002,3037,3422,53,take out from cupboard
+s18-d11-cam-002,3432,3857,62,wash objects
+s18-d11-cam-002,3858,3897,0, Background activity
+s18-d11-cam-002,3898,4054,62,wash objects
+s18-d11-cam-002,4055,4118,0, Background activity
+s18-d11-cam-002,4119,4282,62,wash objects
+s18-d11-cam-002,4283,4337,0, Background activity
+s18-d11-cam-002,4338,4563,62,wash objects
+s18-d11-cam-002,4564,4616,0, Background activity
+s18-d11-cam-002,4617,4846,62,wash objects
+s18-d11-cam-002,4871,5031,62,wash objects
+s18-d11-cam-002,5032,5080,0, Background activity
+s18-d11-cam-002,5081,5163,59,throw in garbage
+s18-d11-cam-002,5177,5345,9,dry
+s18-d11-cam-002,5346,5397,15,move from X to Y
+s18-d11-cam-002,5398,5490,0, Background activity
+s18-d11-cam-002,5491,5823,54,take out from drawer
+s18-d11-cam-002,5824,5859,0, Background activity
+s18-d11-cam-002,5860,6079,54,take out from drawer
+s18-d11-cam-002,6080,6121,0, Background activity
+s18-d11-cam-002,6122,6360,54,take out from drawer
+s18-d11-cam-002,6361,6581,0, Background activity
+s18-d11-cam-002,6582,6718,5,cut off ends
+s18-d11-cam-002,6719,6788,0, Background activity
+s18-d11-cam-002,6789,6824,31,put on cutting-board
+s18-d11-cam-002,6831,6916,2,cut apart
+s18-d11-cam-002,6926,7250,6,cut out inside
+s18-d11-cam-002,7251,7317,0, Background activity
+s18-d11-cam-002,7318,7539,6,cut out inside
+s18-d11-cam-002,7539,7597,52,take ingredient apart
+s18-d11-cam-002,7598,7673,0, Background activity
+s18-d11-cam-002,7674,7783,54,take out from drawer
+s18-d11-cam-002,7783,7883,6,cut out inside
+s18-d11-cam-002,7884,8098,0, Background activity
+s18-d11-cam-002,8099,8265,4,cut in
+s18-d11-cam-002,8280,8333,52,take ingredient apart
+s18-d11-cam-002,8334,8402,0, Background activity
+s18-d11-cam-002,8403,8753,52,take ingredient apart
+s18-d11-cam-002,8754,8870,0, Background activity
+s18-d11-cam-002,8871,9074,4,cut in
+s18-d11-cam-002,9084,9109,52,take ingredient apart
+s18-d11-cam-002,9119,9165,5,cut off ends
+s18-d11-cam-002,9166,9236,0, Background activity
+s18-d11-cam-002,9237,9273,40,smell
+s18-d11-cam-002,9274,9338,0, Background activity
+s18-d11-cam-002,9339,9502,6,cut out inside
+s18-d11-cam-002,9503,9554,0, Background activity
+s18-d11-cam-002,9555,9709,6,cut out inside
+s18-d11-cam-002,9710,9795,0, Background activity
+s18-d11-cam-002,9796,9894,6,cut out inside
+s18-d11-cam-002,9895,10001,0, Background activity
+s18-d11-cam-002,10002,10038,40,smell
+s18-d11-cam-002,10039,10084,0, Background activity
+s18-d11-cam-002,10085,10152,59,throw in garbage
+s18-d11-cam-002,10153,10270,0, Background activity
+s18-d11-cam-002,10271,10316,52,take ingredient apart
+s18-d11-cam-002,10317,10375,0, Background activity
+s18-d11-cam-002,10376,10435,40,smell
+s18-d11-cam-002,10436,10476,0, Background activity
+s18-d11-cam-002,10477,10528,59,throw in garbage
+s18-d11-cam-002,10529,10578,0, Background activity
+s18-d11-cam-002,10579,10683,53,take out from cupboard
+s18-d11-cam-002,10684,10748,0, Background activity
+s18-d11-cam-002,10749,11025,62,wash objects
+s18-d11-cam-002,11026,11104,0, Background activity
+s18-d11-cam-002,11105,11185,5,cut off ends
+s18-d11-cam-002,11186,11284,0, Background activity
+s18-d11-cam-002,11285,11422,2,cut apart
+s18-d11-cam-002,11448,11514,52,take ingredient apart
+s18-d11-cam-002,11515,11544,0, Background activity
+s18-d11-cam-002,11545,11715,6,cut out inside
+s18-d11-cam-002,11716,11885,0, Background activity
+s18-d11-cam-002,11886,11932,59,throw in garbage
+s18-d11-cam-002,11933,12027,0, Background activity
+s18-d11-cam-002,12028,12065,59,throw in garbage
+s18-d11-cam-002,12095,12147,59,throw in garbage
+s18-d11-cam-002,12172,12303,61,wash hands
+s18-d11-cam-002,12304,12366,0, Background activity
+s18-d11-cam-002,12367,12782,6,cut out inside
+s18-d11-cam-002,12783,12930,0, Background activity
+s18-d11-cam-002,12931,13041,59,throw in garbage
+s18-d11-cam-002,13042,13104,0, Background activity
+s18-d11-cam-002,13105,13212,61,wash hands
+s18-d11-cam-002,13223,13270,39,shake
+s18-d11-cam-002,13271,13530,0, Background activity
+s18-d11-cam-002,13531,13565,15,move from X to Y
+s18-d11-cam-002,13566,13613,0, Background activity
+s18-d11-cam-002,13614,13700,2,cut apart
+s18-d11-cam-002,13700,13823,3,cut dice
+s18-d11-cam-002,13838,13902,28,put in bowl
+s18-d11-cam-002,13926,14026,2,cut apart
+s18-d11-cam-002,14026,14190,3,cut dice
+s18-d11-cam-002,14191,14327,28,put in bowl
+s18-d11-cam-002,14328,14399,0, Background activity
+s18-d11-cam-002,14400,14499,2,cut apart
+s18-d11-cam-002,14500,14686,0, Background activity
+s18-d11-cam-002,14687,14901,2,cut apart
+s18-d11-cam-002,14902,14931,0, Background activity
+s18-d11-cam-002,14932,15110,3,cut dice
+s18-d11-cam-002,15126,15167,15,move from X to Y
+s18-d11-cam-002,15194,15314,3,cut dice
+s18-d11-cam-002,15334,15401,28,put in bowl
+s18-d11-cam-002,15402,15439,0, Background activity
+s18-d11-cam-002,15440,15508,3,cut dice
+s18-d11-cam-002,15524,15614,28,put in bowl
+s18-d11-cam-002,15615,15649,0, Background activity
+s18-d11-cam-002,15650,15859,2,cut apart
+s18-d11-cam-002,15873,15946,28,put in bowl
+s18-d11-cam-002,15974,16028,3,cut dice
+s18-d11-cam-002,16047,16068,28,put in bowl
+s18-d11-cam-002,16082,16110,3,cut dice
+s18-d11-cam-002,16119,16141,28,put in bowl
+s18-d11-cam-002,16142,16175,0, Background activity
+s18-d11-cam-002,16176,16251,2,cut apart
+s18-d11-cam-002,16273,16359,3,cut dice
+s18-d11-cam-002,16374,16455,28,put in bowl
+s18-d11-cam-002,16456,16485,0, Background activity
+s18-d11-cam-002,16486,16575,3,cut dice
+s18-d11-cam-002,16592,16645,28,put in bowl
+s18-d11-cam-002,16646,16690,0, Background activity
+s18-d11-cam-002,16691,16806,2,cut apart
+s18-d11-cam-002,16806,16965,3,cut dice
+s18-d11-cam-002,16984,17182,28,put in bowl
+s18-d11-cam-002,17183,17337,0, Background activity
+s18-d11-cam-002,17338,17445,5,cut off ends
+s18-d11-cam-002,17446,17492,0, Background activity
+s18-d11-cam-002,17493,17981,23,peel
+s18-d11-cam-002,17982,18131,0, Background activity
+s18-d11-cam-002,18132,18256,2,cut apart
+s18-d11-cam-002,18256,18373,3,cut dice
+s18-d11-cam-002,18396,18442,28,put in bowl
+s18-d11-cam-002,18463,18530,2,cut apart
+s18-d11-cam-002,18530,18633,3,cut dice
+s18-d11-cam-002,18652,18726,28,put in bowl
+s18-d11-cam-002,18727,18812,0, Background activity
+s18-d11-cam-002,18813,18925,59,throw in garbage
+s18-d11-cam-002,18937,19066,62,wash objects
+s18-d11-cam-002,19067,19127,0, Background activity
+s18-d11-cam-002,19128,19186,64,wipe clean
+s18-d11-cam-002,19207,19254,61,wash hands
+s18-d11-cam-002,19255,19361,0, Background activity
+s18-d11-cam-002,19362,19437,15,move from X to Y
+s18-d11-cam-002,19438,19542,0, Background activity
+s18-d11-cam-002,19543,19875,62,wash objects
+s18-d11-cam-002,19876,20182,0, Background activity
+s18-d11-cam-002,20183,20335,62,wash objects
+s18-d11-cam-002,20336,20426,0, Background activity
+s18-d11-cam-002,20427,20451,12,lid: put on
+s18-d11-cam-002,20452,20505,0, Background activity
+s18-d11-cam-002,20506,20536,15,move from X to Y
+s18-d11-cam-002,20537,20589,0, Background activity
+s18-d11-cam-002,20590,20669,5,cut off ends
+s18-d11-cam-002,20670,20829,0, Background activity
+s18-d11-cam-002,20830,20924,2,cut apart
+s18-d11-cam-002,20925,21029,0, Background activity
+s18-d11-cam-002,21030,22611,43,squeeze
+s18-d11-cam-002,22612,22779,0, Background activity
+s18-d11-cam-002,22780,23142,52,take ingredient apart
+s18-d11-cam-002,23143,23281,0, Background activity
+s18-d11-cam-002,23282,23318,9,dry
+s18-d11-cam-002,23335,23444,18,open/close cupboard
+s18-d11-cam-002,23445,23576,0, Background activity
+s18-d11-cam-002,23577,24044,7,cut slices
+s18-d11-cam-002,24045,24135,0, Background activity
+s18-d11-cam-002,24136,24182,4,cut in
+s18-d11-cam-002,24183,24239,0, Background activity
+s18-d11-cam-002,24240,24291,59,throw in garbage
+s18-d11-cam-002,24292,24352,0, Background activity
+s18-d11-cam-002,24353,24470,2,cut apart
+s18-d11-cam-002,24471,24519,0, Background activity
+s18-d11-cam-002,24520,24646,7,cut slices
+s18-d11-cam-002,24674,24717,4,cut in
+s18-d11-cam-002,24718,24804,0, Background activity
+s18-d11-cam-002,24805,25081,52,take ingredient apart
+s18-d11-cam-002,25107,25536,43,squeeze
+s18-d11-cam-002,25537,25617,0, Background activity
+s18-d11-cam-002,25618,25785,31,put on cutting-board
+s18-d11-cam-002,25786,25819,0, Background activity
+s18-d11-cam-002,25820,26107,43,squeeze
+s18-d11-cam-002,26108,26185,0, Background activity
+s18-d11-cam-002,26186,26227,59,throw in garbage
+s18-d11-cam-002,26246,26503,61,wash hands
+s18-d11-cam-002,26504,26544,0, Background activity
+s18-d11-cam-002,26545,26617,9,dry
+s18-d11-cam-002,26618,26736,0, Background activity
+s18-d11-cam-002,26737,26856,13,lid: remove
+s18-d11-cam-002,26857,26925,0, Background activity
+s18-d11-cam-002,26926,27057,59,throw in garbage
+s18-d11-cam-002,27058,27279,0, Background activity
+s18-d11-cam-002,27280,27375,61,wash hands
+s18-d11-cam-002,27376,27413,0, Background activity
+s18-d11-cam-002,27414,27478,9,dry
+s18-d11-cam-002,27479,27534,0, Background activity
+s18-d11-cam-002,27535,27622,26,pull out
+s18-d11-cam-002,27649,27800,24,plug in/out
+s18-d11-cam-002,27801,28560,0, Background activity
+s18-d11-cam-002,28561,31850,27,puree
+s18-d11-cam-002,31851,31922,0, Background activity
+s18-d11-cam-002,31923,32269,36,scratch off
+s18-d11-cam-002,32270,32492,0, Background activity
+s18-d11-cam-002,32493,32607,53,take out from cupboard
+s18-d11-cam-002,32608,32649,0, Background activity
+s18-d11-cam-002,32650,32695,38,screw open
+s18-d11-cam-002,32697,32746,40,smell
+s18-d11-cam-002,32747,32861,0, Background activity
+s18-d11-cam-002,32862,33101,54,take out from drawer
+s18-d11-cam-002,33102,33139,0, Background activity
+s18-d11-cam-002,33140,33210,25,pour
+s18-d11-cam-002,33214,33248,58,taste
+s18-d11-cam-002,33249,33388,0, Background activity
+s18-d11-cam-002,33389,33563,25,pour
+s18-d11-cam-002,33564,33718,0, Background activity
+s18-d11-cam-002,33719,33768,37,screw close
+s18-d11-cam-002,33788,33893,47,take \& put in cupboard
+s18-d11-cam-002,33894,34060,0, Background activity
+s18-d11-cam-002,34061,34199,25,pour
+s18-d11-cam-002,34200,34351,0, Background activity
+s18-d11-cam-002,34352,34925,27,puree
+s18-d11-cam-002,34926,35082,0, Background activity
+s18-d11-cam-002,35083,35138,0, Background activity
+s18-d11-cam-002,35168,35209,24,plug in/out
+s18-d11-cam-002,35214,35334,48,take \& put in drawer
+s18-d11-cam-002,35335,35380,0, Background activity
+s18-d11-cam-002,35381,35427,0, Background activity
+s18-d11-cam-002,35428,35547,0, Background activity
+s18-d11-cam-002,35548,35811,53,take out from cupboard
+s18-d11-cam-002,35812,35910,0, Background activity
+s18-d11-cam-002,35911,36106,25,pour
+s18-d11-cam-002,36107,36190,0, Background activity
+s18-d11-cam-002,36191,36326,15,move from X to Y
+s18-d11-cam-002,36327,36362,0, Background activity
+s18-d11-cam-002,36363,36502,15,move from X to Y
+s18-d11-cam-002,36503,36606,0, Background activity
+s18-d11-cam-002,36607,36649,31,put on cutting-board
+s18-d11-cam-002,36657,36890,52,take ingredient apart
+s18-d11-cam-002,36891,36921,0, Background activity
+s18-d11-cam-002,36922,36991,15,move from X to Y
+s18-d11-cam-002,36992,37137,0, Background activity

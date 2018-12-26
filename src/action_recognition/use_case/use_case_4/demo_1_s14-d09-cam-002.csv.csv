@@ -1,0 +1,36 @@
+54,take out from drawer,take out vessel from drawer
+54,take out from drawer,take out knife from drawer
+53,take out from cupboard,take out potato from cupboard
+53,take out from cupboard,take out bowl from cupboard
+23,peel,peel potato
+59,throw in garbage,throw waste in garbage
+7,cut slices,cut potato into slices
+55,take out from fridge,take out milk bottle from fridge
+,,take out butter case from fridge
+38,screw open,screw milk bottle open
+25,pour,pour milk into vessel
+37,screw close,screw milk bottle close
+13,lid: remove,remove lid from butter case
+29,put in pan/pot,put butter in vessel
+12,lid: put on,put on lid to butter case
+,,keep vessel on stove
+1,change temperature,turn on stove
+49,take \& put in fridge,put butter case in fridge
+57,take out from spice holder,take out pepper from spice holder
+,,take out salt from spice holder
+29,put in pan/pot,put potato in vessel
+38,screw open,screw open salt
+41,spice,add salt to vessel
+37,screw close,screw close salt
+38,screw open,screw open pepper
+41,spice,add pepper to vessel
+37,screw close,screw close pepper
+54,take out from drawer,take out masher from drawer
+54,take out from drawer,take out spoon from drawer
+45,stir,stir
+38,screw open,screw open salt
+41,spice,add salt to vessel
+37,screw close,screw close salt
+28,put in bowl,put spoon in bowl
+44,stamp,mash potato in vessel
+28,put in bowl,put contents of vessel in bowl

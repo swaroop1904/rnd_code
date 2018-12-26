@@ -1,0 +1,74 @@
+,fill water into vessel from tap
+,turn on stove
+,keep vessel on stove
+,take out cup from cupboard
+,take out coffee mix from cupboard
+,take out grater from drawer
+,take out chopping board from drawer
+,take out chocolate bar from drawer
+,put grater on chopping board
+,rip open coffee mix
+,put coffee mix into mug
+,throw waste in garbage
+,grate chocolate bar
+,put chocolate bar in cupboard
+,take out spoon from drawer
+,wash spoon
+,turn off stove
+,pour hot water into cup
+,put grated chocolate in cup
+,stir
+-1,complete
+,take out vessel from drawer
+,wash vessel
+,fill water into vessel from tap
+,keep vessel on stove
+,turn on stove
+,take out cup from cupboard
+,take out coffee mix from cupboard
+,rip open coffee mix
+,put coffee mix into mug
+,throw waste in garbage
+,take out spoon from drawer
+,open drawer
+,pour hot water into cup
+,stir
+-1,complete
+,take out vessel from drawer
+,fill water into vessel from tap
+,keep vessel on stove
+,turn on stove
+,take out coffee mix packs from cupboard
+,take out cup from cupboard
+,take out saucer from cupboard
+,take out scissors from drawer
+,take out spoon from cupboard
+,remove one pack from coffee mix pack
+,put remaining coffee packs in cupboard
+,rip open coffee mix
+,put coffee mix into mug
+,turn off stove
+,throw waste in garbage
+,pour hot water into vessel
+,put cup on saucer
+,stir
+-1,complete
+,take out coffee mix packs from cupboard
+,remove one pack from coffee mix pack
+,take out vessel from drawer
+,fill water into vessel from tap
+,keep vessel on stove
+,turn on stove
+,take out cup from cupboard
+,take out saucer from cupboard
+,take out chocolate bar from cupboard
+,take out grater from drawer
+,grate chocolate bar
+,turn off stove
+,rip open coffee mix
+,put coffee mix into mug
+,pour hot water into vessel
+,take out spoon from drawer
+,stir
+,strew grated chocolate on mug
+-1,complete
