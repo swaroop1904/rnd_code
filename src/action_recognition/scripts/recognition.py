@@ -84,46 +84,28 @@ class ActionRecognition(object):
         #self.csv_path = package_path+"/use_case/use_case_5/main_files/usecase_5_complete.csv"
 
     def action_recognition_callback(self, data):
-        ## hardcoded data
-
-        # if self.learning:
-        #     array_2 = np.array([0,1,2,3,4,5,6,7,-1])
-        #     array_1 = np.array([6,4,5,7,-1])
-        #     array_3 = np.array([5,4,2,1,0,3,6,7,-1])
-        #     for val in array_1:
-        #         self.detected_action_pub.publish(val)
-        #     for val in array_2:
-        #         self.detected_action_pub.publish(val)
-        #     for val in array_3:
-        #        self.detected_action_pub.publish(val)
-        #     # for val in array_4:
-        #     #     self.detected_action_pub.publish(val)
-        # else:
-        #     array_5 = np.array([7,3,1,2,0,4,5,6,-1])
-        #     for val in array_5:
-        #         self.detected_action_pub.publish(val)
 
         ## data from camera feed
 
-        # if self.recognizing_action:
-        #     return
-        # data = self.bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
-        # data = cv2.resize(data, (self.height, self.width))
-        # data = np.asarray(data)
-        # data = data.astype(float)
-        # self.frames[:,:,self.count,:] = data
-        # if self.count < self.depth - 1:
-        #     print "generating frames"
-        #     self.count += 1
-        # else:
-        #     self.recognizing_action = True
-        #     self.recognition_thread = threading.Thread(target=self.action_recognition,
-        #                                                args=(np.array(self.frames),))
-        #     self.recognition_thread.start()
-        #     self.count = 0
+         if self.recognizing_action:
+             return
+         data = self.bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
+         data = cv2.resize(data, (self.height, self.width))
+         data = np.asarray(data)
+         data = data.astype(float)
+         self.frames[:,:,self.count,:] = data
+         if self.count < self.depth - 1:
+             print "generating frames"
+             self.count += 1
+         else:
+             self.recognizing_action = True
+             self.recognition_thread = threading.Thread(target=self.action_recognition,
+                                                        args=(np.array(self.frames),))
+             self.recognition_thread.start()
+             self.count = 0
 
         # data from MP-II dataset
-        self.publish_action_labels()
+        #self.publish_action_labels()
 
 
     def action_recognition(self, frames):
